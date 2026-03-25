@@ -9,11 +9,13 @@ import {
 } from "lucide-react";
 import { conditions } from "@/data/conditions";
 import ConditionIcon from "@/components/ConditionIcon";
-import { testimonials } from "@/data/testimonials";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import { services } from "@/data/services";
 import { BUSINESS } from "@/config/business";
 import SEO, { localBusinessSchema } from "@/components/SEO";
 import ScrollReveal from "@/components/ScrollReveal";
+import { faqs } from "@/data/faqs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5";
 
@@ -393,50 +395,7 @@ export default function Home() {
         {/* ── 9. Testimonials ─────────────────────────────── */}
         <section className="py-20 bg-white">
           <div className="container">
-            <ScrollReveal className="text-center mb-12">
-              <div className="brp-badge mx-auto mb-4">Patient Reviews</div>
-              <h2 className="brp-section-heading text-4xl mb-4">What our patients say</h2>
-              <div className="flex items-center justify-center gap-2" style={{ color: "var(--brp-muted)" }}>
-                <div className="flex">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <span className="font-semibold" style={{ color: "var(--brp-text)" }}>4.9 / 5</span>
-                <span>on Google Reviews</span>
-              </div>
-            </ScrollReveal>
-            <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((t, i) => (
-                <ScrollReveal key={t.name} delay={i * 100}>
-                <div className="brp-card p-6">
-                  <div className="flex mb-3">
-                    {Array.from({ length: t.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-sm leading-relaxed mb-4 italic" style={{ color: "#374151" }}>
-                    "{t.text}"
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm text-white"
-                      style={{ backgroundColor: "var(--brp-green-800)" }}
-                    >
-                      {t.name[0]}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm" style={{ color: "var(--brp-text)" }}>{t.name}</div>
-                      <div className="text-xs flex items-center gap-1" style={{ color: "var(--brp-muted)" }}>
-                        <img src={`${CDN}/logo-final-square_18df8581.png`} alt="" className="h-3 w-3 rounded-sm" />
-                        Google Review
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </ScrollReveal>
-              ))}
-            </div>
+            <TestimonialsCarousel />
           </div>
         </section>
 
@@ -595,6 +554,52 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ── 12b. FAQ Section ─────────────────────────────── */}
+        <section className="py-20" style={{ backgroundColor: "var(--brp-cream)" }}>
+          <div className="container">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <div className="brp-badge mx-auto mb-4">Frequently Asked Questions</div>
+                <h2 className="text-4xl font-bold mb-4" style={{ fontFamily: "var(--font-display)", color: "var(--brp-text)" }}>
+                  Common questions answered
+                </h2>
+                <p className="max-w-2xl mx-auto" style={{ color: "var(--brp-muted)" }}>
+                  Everything you need to know about our services, compounding, and prescriptions.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <div className="max-w-3xl mx-auto">
+                <Accordion type="single" collapsible className="space-y-3">
+                  {faqs.slice(0, 7).map((faq, i) => (
+                    <AccordionItem
+                      key={i}
+                      value={`faq-${i}`}
+                      className="brp-card px-6 border-0"
+                    >
+                      <AccordionTrigger className="text-left font-semibold py-4" style={{ color: "var(--brp-text)" }}>
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-4 leading-relaxed" style={{ color: "var(--brp-muted)" }}>
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+                <div className="text-center mt-8">
+                  <Link
+                    href="/knowledge-centre"
+                    className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+                    style={{ color: "var(--brp-green-700)" }}
+                  >
+                    View all FAQs in the Knowledge Centre <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 

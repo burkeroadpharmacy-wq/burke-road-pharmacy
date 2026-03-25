@@ -27,7 +27,6 @@ const navItems = [
       { label: "Vaccinations", href: "/services#vaccinations" },
       { label: "Chemist Care Now", href: "/services/chemist-care-now" },
       { label: "Travel Health", href: "/services/travel-health" },
-      { label: "Plant-Based Therapies", href: "/services/plant-based-therapies" },
       { label: "Dose Administration Aids", href: "/services#daa" },
       { label: "Delivery", href: "/services#delivery" },
     ],

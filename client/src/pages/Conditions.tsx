@@ -2,6 +2,7 @@ import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
 import { conditions } from "@/data/conditions";
 import ConditionIcon from "@/components/ConditionIcon";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function Conditions() {
   const displayConditions = conditions;
@@ -10,9 +11,7 @@ export default function Conditions() {
     <div className="bg-background">
       <div className="brp-gradient py-16 text-white">
         <div className="container">
-          <Link href="/compounding" className="text-white/70 hover:text-white text-sm mb-4 inline-block">
-            ← Back to Compounding
-          </Link>
+          <Breadcrumb items={[{ label: "Conditions", href: "/conditions" }]} className="mb-4" />
           <h1
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "var(--font-display)" }}

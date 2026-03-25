@@ -6,6 +6,8 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { BUSINESS } from "@/config/business";
 import NotFound from "./NotFound";
 
+const BASE_URL = "https://burkeroadpharmacy.com.au";
+
 /**
  * ArticleDetail — Knowledge Centre article page
  * Renders article content with SEO, breadcrumbs, and related articles
@@ -33,11 +35,32 @@ export default function ArticleDetail() {
         description={article.excerpt}
         canonical={`/knowledge-centre/${slug}`}
         ogType="article"
-        jsonLd={breadcrumbSchema([
-          { name: "Home", url: "/" },
-          { name: "Knowledge Centre", url: "/knowledge-centre" },
-          { name: article.title, url: `/knowledge-centre/${slug}` },
-        ])}
+        jsonLd={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Knowledge Centre", url: "/knowledge-centre" },
+            { name: article.title, url: `/knowledge-centre/${slug}` },
+          ]),
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: article.title,
+            description: article.excerpt,
+            author: {
+              "@type": "Organization",
+              name: BUSINESS.displayName,
+              url: BASE_URL,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: BUSINESS.displayName,
+              url: BASE_URL,
+            },
+            url: `${BASE_URL}/knowledge-centre/${slug}`,
+            datePublished: article.publishedAt,
+            articleSection: article.category,
+          },
+        ]}
       />
       <div style={{ backgroundColor: "var(--brp-cream)" }}>
         {/* Header */}

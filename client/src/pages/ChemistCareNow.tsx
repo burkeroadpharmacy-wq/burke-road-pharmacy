@@ -117,6 +117,23 @@ export default function ChemistCareNow() {
                 </div>
               </div>
 
+              {/* Explainer video */}
+              <div className="brp-card overflow-hidden">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/Wd9dMKr5GHk?rel=0&modestbranding=1"
+                    title="Chemist Care Now — Pharmacist Prescribing Explained"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-sm" style={{ color: "var(--brp-muted)" }}>Learn how pharmacist prescribing works under the Chemist Care Now program.</p>
+                </div>
+              </div>
+
               <a
                 href="https://www.medadvisor.com.au/Network/BurkeRoadDiscountDrugStore"
                 target="_blank"

@@ -1,3 +1,4 @@
+import Breadcrumb from "@/components/Breadcrumb";
 import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
 import ConditionIcon from "@/components/ConditionIcon";
@@ -38,7 +39,7 @@ const services = [
     link: BOOKING_URL,
     linkLabel: "Book a vaccination online",
     linkExternal: true,
-    image: null,
+    image: `https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5/vaccination-pharmacist-eqVgJNrC6zpdiQHqiCSkev.webp`,
   },
   {
     id: "compounding",
@@ -88,7 +89,7 @@ const services = [
       "Available for residential care facilities",
       "Home delivery available",
     ],
-    image: null,
+    image: `https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5/webster-pak-daa-WXmNidEzFh8yBfFgirvVa8.webp`,
   },
   {
     id: "medadvisor",
@@ -103,7 +104,7 @@ const services = [
       "Share medication list with carers",
       "Available on iOS and Android",
     ],
-    image: null,
+    image: `https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5/medadvisor-app-XUYkDHMTACrH2mARtWjND6.webp`,
   },
   {
     id: "dva",
@@ -141,9 +142,7 @@ export default function Services() {
       {/* Header */}
       <div className="brp-gradient py-16 text-white">
         <div className="container">
-          <Link href="/" className="text-white/70 hover:text-white text-sm mb-4 inline-block">
-            ← Back to Home
-          </Link>
+          <Breadcrumb items={[{ label: "Services", href: "/services" }]} className="mb-4" />
           <h1
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "var(--font-display)" }}

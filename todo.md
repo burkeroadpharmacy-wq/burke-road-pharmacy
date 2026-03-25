@@ -200,3 +200,29 @@
 - [ ] Improve testimonials section (gold stars, carousel)
 - [x] Add Book Online button to hero section linking to MedAdvisor
 - [x] Add Book Online button to sticky header next to phone number
+
+## Phase 13: Comprehensive Audit Fixes
+
+### Critical
+- [ ] Write full HTML content for all 19 Knowledge Centre articles
+- [x] Remove broken Plant-Based Therapies nav link
+- [x] Add embedded video to Chemist Care Now page
+- [ ] Add missing service images (Vaccinations, MedAdvisor, DAA)
+
+### High Priority
+- [ ] Add breadcrumbs to Conditions, Contact, Practitioners, Prescribers, Services pages
+- [ ] Add Book Online button to Vaccinations page
+- [x] Add FAQ accordion section to homepage with FAQPage schema
+- [ ] Add For GPs & Specialists teaser section to homepage
+
+### Medium Priority
+- [x] Add Article JSON-LD schema to ArticleDetail page
+- [ ] Add MedicalCondition JSON-LD schema to ConditionDetail page
+- [ ] Add counter animations to homepage trust stats
+- [ ] Build testimonials carousel/slider on homepage
+- [ ] Add favicon.ico, manifest.json, Apple icons to public/
+- [ ] Update index.html with proper favicon and theme-color meta tags
+
+### Lower Priority
+- [ ] Clean up unused routes (/compounding-pharmacy-camberwell, /order-repeat-script, /ask-a-pharmacist)
+- [ ] Verify all internal anchor links (Services section IDs)

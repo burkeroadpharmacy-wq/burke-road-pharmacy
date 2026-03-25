@@ -1,3 +1,4 @@
+import Breadcrumb from "@/components/Breadcrumb";
 import { useState } from "react";
 import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
@@ -112,9 +113,7 @@ export default function Prescribers() {
       {/* Header */}
       <div className="brp-gradient py-12 text-white">
         <div className="container">
-          <Link href="/" className="text-white/70 hover:text-white text-sm mb-4 inline-block">
-            ← Back to Home
-          </Link>
+          <Breadcrumb items={[{ label: "Prescribers", href: "/prescribers" }]} className="mb-4" />
           <h1
             className="text-4xl font-bold mb-2"
             style={{ fontFamily: "var(--font-display)" }}

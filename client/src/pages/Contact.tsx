@@ -1,3 +1,4 @@
+import Breadcrumb from "@/components/Breadcrumb";
 import { useState } from "react";
 import { Link } from "wouter";
 import { BUSINESS } from "@/config/business";
@@ -58,9 +59,7 @@ export default function Contact() {
       {/* Header */}
       <div className="brp-gradient py-16 text-white">
         <div className="container">
-          <Link href="/" className="text-white/70 hover:text-white text-sm mb-4 inline-block">
-            ← Back to Home
-          </Link>
+          <Breadcrumb items={[{ label: "Contact", href: "/contact" }]} className="mb-4" />
           <h1
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "var(--font-display)" }}

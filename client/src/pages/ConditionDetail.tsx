@@ -1,10 +1,12 @@
 import { Link } from "wouter";
 import { ArrowRight, AlertTriangle } from "lucide-react";
 import ConditionIcon from "@/components/ConditionIcon";
-import SEO from "@/components/SEO";
+import SEO, { breadcrumbSchema } from "@/components/SEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import { BUSINESS } from "@/config/business";
 import PrescriptionUploadEmbed from "@/components/PrescriptionUploadEmbed";
+
+const BASE_URL = "https://burkeroadpharmacy.com.au";
 
 interface ConditionData {
   icon: string;
@@ -456,6 +458,25 @@ export default function ConditionDetail({ params }: Props) {
         title={data.title}
         description={data.metaDescription}
         canonical={`/conditions/${slug}`}
+        jsonLd={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Conditions", url: "/conditions" },
+            { name: data.title, url: `/conditions/${slug}` },
+          ]),
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalCondition",
+            name: data.title,
+            description: data.metaDescription,
+            url: `${BASE_URL}/conditions/${slug}`,
+            recognizingAuthority: {
+              "@type": "Organization",
+              name: "Burke Road Compounding Pharmacy",
+              url: BASE_URL,
+            },
+          },
+        ]}
       />
 
       {/* Hero */}
