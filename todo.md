@@ -65,3 +65,98 @@
 - [x] Restore Vite build output to dist/public/ (server serves from there)
 - [x] Verify pnpm build produces both dist/index.js and dist/public/index.html
 - [x] Checkpoint and push to GitHub
+
+## Phase 5: 2026 Master Refactor
+
+### Phase 0 — Business Identity
+- [ ] Create /src/config/business.ts single source of truth
+- [ ] Replace all hardcoded business details with BUSINESS.* imports
+- [ ] Remove fake ABN (12 345 678 901), replace with real ABN 14 189 083 426
+- [ ] Remove placeholder email addresses
+- [ ] Fix Book Vaccination button (tel: → real booking URL)
+
+### Phase 1 — Technical SEO
+- [ ] Install react-helmet-async for head management
+- [ ] Add unique title + meta description to every page
+- [ ] Add canonical tags pointing to production domain
+- [ ] Add noindex on staging, index on production
+- [ ] Add JSON-LD LocalBusiness + Pharmacy schema on homepage
+- [ ] Add BreadcrumbList schema on all inner pages
+- [ ] Add FAQPage schema on FAQ sections
+- [ ] Add Article schema on Knowledge Centre articles
+- [ ] Add Open Graph + Twitter card meta tags to every page
+- [ ] Generate /sitemap.xml at build time
+- [ ] Add /robots.txt
+- [ ] Add preconnect/dns-prefetch for Google Fonts and CDN
+
+### Phase 2 — Design System
+- [ ] Update CSS custom properties with new colour palette (deep green, brass/gold accent)
+- [ ] Replace Playfair Display with Fraunces (display) + Plus Jakarta Sans (body)
+- [ ] Add fluid type scale using clamp()
+- [ ] Add spacing, radius, shadow tokens
+- [ ] Implement dark mode with Tailwind dark: variants + localStorage persistence
+- [ ] Update button system (primary brass, secondary outline, ghost)
+
+### Phase 3 — Homepage Redesign
+- [ ] Announcement bar with scrolling offer
+- [ ] Sticky nav with mega-menu dropdowns
+- [ ] Hero section (full-bleed, asymmetric layout)
+- [ ] Services overview grid (6 cards)
+- [ ] Compounding highlight section (2-col)
+- [ ] Browse by condition grid (12 conditions)
+- [ ] PBS pricing section
+- [ ] Testimonials/reviews section
+- [ ] Location & hours section with map
+- [ ] Accreditations bar (monochrome logos)
+- [ ] FAQ section with FAQPage schema
+- [ ] For GPs & Specialists teaser section
+- [ ] Mobile sticky bottom action bar
+- [ ] WhatsApp floating button
+
+### Phase 4 — Global UI Components
+- [ ] MobileActionBar component (phone, WhatsApp, upload script, book)
+- [ ] WhatsAppFloatingButton component with pulse animation
+- [ ] Breadcrumbs component with JSON-LD
+- [ ] PageEnquiryForm component (4-field inline form)
+- [ ] PharmacistCTA callout block component
+
+### Phase 5 — New Pages
+- [ ] /about — pharmacy story, team profiles, accreditations
+- [ ] /upload-prescription — full guided form with drag-and-drop
+- [ ] /compounding-pharmacy-camberwell — local SEO landing page
+- [ ] /services/travel-health — travel vaccines + consultation
+- [ ] /services/chemist-care-now — pharmacist prescribing page
+- [ ] /vaccinations — all vaccines, pricing, booking
+- [ ] /services/plant-based-therapies — herbal compounding
+- [ ] /delivery — shipping info, turnaround, cold-chain
+- [ ] /prescribers — rebuilt professional resource hub
+- [ ] /order-repeat-script — dedicated conversion page
+- [ ] /ask-a-pharmacist — dedicated conversion page
+
+### Phase 6 & 7 — Content
+- [ ] Knowledge Centre article template with author byline, references, FAQ
+- [ ] Full content for 5 priority condition pages (BHRT, LDN, Pain, Paediatrics, Vet)
+- [ ] 7 priority Knowledge Centre articles (full 600+ word content)
+- [ ] Internal linking clusters between conditions and articles
+
+### Phase 8 — Visual Polish
+- [ ] Section transitions (SVG wave/diagonal clip-path)
+- [ ] Accreditation logos in monochrome
+- [ ] Dark mode testing across all components
+- [ ] WebP/AVIF images with explicit width/height
+- [ ] fetchpriority="high" on hero image
+
+## Phase 9: Contact Details Update (User-Verified)
+- [ ] Update business.ts with verified: phone 03 9882 5386, mobile 0450 352 483, fax 03 9882 8214, email info@burkeroadpharmacy.com.au, ABN 70764240081
+- [ ] Update SEO.tsx localBusinessSchema with correct phone/email/ABN
+- [ ] Update Layout.tsx footer with correct contact details
+- [ ] Update Contact.tsx with correct contact details
+- [ ] Update Home.tsx with correct contact details
+- [ ] Update MobileActionBar.tsx with correct phone number
+- [ ] Update WhatsAppButton.tsx with correct WhatsApp number
+- [ ] Update all other pages referencing old placeholder contact details
+
+## Phase 9: Contact Details Update (User-Verified)
+- [x] Update business.ts with verified phone/mobile/fax/email/ABN
+- [x] Update SEO.tsx localBusinessSchema with correct details
+- [x] Update all pages referencing old placeholder contact details

@@ -1,9 +1,14 @@
 import { Link } from "wouter";
+import { ArrowRight, AlertTriangle, Upload } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumb from "@/components/Breadcrumb";
+import { BUSINESS } from "@/config/business";
 
 interface ConditionData {
   icon: string;
   title: string;
   subtitle: string;
+  metaDescription: string;
   intro: string;
   sections: Array<{ heading: string; content: string; items?: string[] }>;
   disclaimer?: string;
@@ -14,16 +19,18 @@ const conditionData: Record<string, ConditionData> = {
     icon: "⚖️",
     title: "Hormone Therapy Compounding",
     subtitle: "Personalised bioidentical hormone replacement therapy",
+    metaDescription:
+      "Compounded bioidentical hormone replacement therapy (BHRT) tailored to your needs. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "At Burke Road Compounding Pharmacy, we specialise in creating personalised bioidentical hormone replacement therapy (BHRT) formulations tailored to your unique hormonal needs. Our compounded hormone therapies are designed to restore balance, alleviate symptoms, and improve your quality of life.",
     sections: [
       {
-        heading: "Why Choose Compounded Hormone Therapy?",
+        heading: "Why choose compounded hormone therapy?",
         content:
           "Compounded hormones allow for precise dosing, customised delivery methods, and formulations free from unnecessary additives — providing a personalised approach that commercial products cannot match.",
       },
       {
-        heading: "Conditions We Treat",
+        heading: "Conditions we treat",
         content: "",
         items: [
           "Menopause & Perimenopause: Hot flushes, night sweats, mood changes, sleep disturbances",
@@ -35,7 +42,7 @@ const conditionData: Record<string, ConditionData> = {
         ],
       },
       {
-        heading: "Available Hormone Formulations",
+        heading: "Available hormone formulations",
         content: "We compound a wide range of bioidentical hormones in various dosage forms:",
         items: [
           "Oestrogen (Oestradiol, Oestriol, Oestrone): Creams, gels, capsules, troches",
@@ -54,11 +61,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "💊",
     title: "Pain Management Compounding",
     subtitle: "Targeted topical and systemic pain relief solutions",
+    metaDescription:
+      "Customised compounded pain management preparations — topical creams, PLO gels, and oral capsules. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "Our compounding pharmacists create customised pain management preparations that can be tailored to your specific type of pain, severity, and preferred delivery method. Topical preparations can provide localised relief with reduced systemic side effects.",
     sections: [
       {
-        heading: "Types of Pain We Address",
+        heading: "Types of pain we address",
         content: "",
         items: [
           "Neuropathic pain (nerve pain, diabetic neuropathy)",
@@ -70,7 +79,7 @@ const conditionData: Record<string, ConditionData> = {
         ],
       },
       {
-        heading: "Compounded Pain Formulations",
+        heading: "Compounded pain formulations",
         content: "",
         items: [
           "Topical analgesic creams and gels (ketamine, gabapentin, amitriptyline, ketoprofen)",
@@ -88,11 +97,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "🌿",
     title: "Dermatology Compounding",
     subtitle: "Custom skincare and dermatological preparations",
+    metaDescription:
+      "Compounded dermatology preparations for acne, rosacea, eczema, pigmentation, and hair loss. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "We prepare customised dermatological formulations for a wide range of skin conditions. Our preparations can be tailored to your skin type, sensitivity, and specific therapeutic needs.",
     sections: [
       {
-        heading: "Conditions We Treat",
+        heading: "Conditions we treat",
         content: "",
         items: [
           "Acne and rosacea",
@@ -105,7 +116,7 @@ const conditionData: Record<string, ConditionData> = {
         ],
       },
       {
-        heading: "Popular Formulations",
+        heading: "Popular formulations",
         content: "",
         items: [
           "Tretinoin creams in custom strengths",
@@ -122,11 +133,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "👶",
     title: "Paediatric Compounding",
     subtitle: "Child-friendly medications in the right dose and form",
+    metaDescription:
+      "Paediatric compounding — precise doses, palatable flavours, and child-friendly forms for infants and children. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "Children often require medications in doses or forms not available commercially. Our paediatric compounding service creates child-friendly formulations that make medication administration easier and more accurate.",
     sections: [
       {
-        heading: "Why Paediatric Compounding?",
+        heading: "Why paediatric compounding?",
         content: "",
         items: [
           "Precise dosing based on weight and age",
@@ -137,7 +150,7 @@ const conditionData: Record<string, ConditionData> = {
         ],
       },
       {
-        heading: "Available Forms",
+        heading: "Available forms",
         content: "",
         items: [
           "Flavoured oral liquids and suspensions",
@@ -153,11 +166,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "🐾",
     title: "Veterinary Compounding",
     subtitle: "Customised medications for your beloved animals",
+    metaDescription:
+      "Compounded veterinary medications for pets and animals of all sizes. Flavoured, easy-to-administer preparations. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "We provide compounded veterinary medications for pets and animals of all sizes. Our veterinary preparations are formulated to be palatable and easy to administer, improving compliance for both pets and their owners.",
     sections: [
       {
-        heading: "Animals We Cater For",
+        heading: "Animals we cater for",
         content: "",
         items: [
           "Dogs and cats",
@@ -168,7 +183,7 @@ const conditionData: Record<string, ConditionData> = {
         ],
       },
       {
-        heading: "Compounded Veterinary Forms",
+        heading: "Compounded veterinary forms",
         content: "",
         items: [
           "Flavoured oral liquids (chicken, beef, fish flavours)",
@@ -186,11 +201,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "🧬",
     title: "Low Dose Naltrexone (LDN)",
     subtitle: "Emerging therapy for autoimmune and chronic conditions",
+    metaDescription:
+      "Compounded Low Dose Naltrexone (LDN) capsules and liquids for autoimmune conditions, fibromyalgia, and chronic pain. Burke Road Compounding Pharmacy.",
     intro:
       "Low Dose Naltrexone (LDN) is used at doses much lower than its standard use for addiction treatment. At these low doses, it is believed to modulate the immune system and has shown promise in a range of conditions.",
     sections: [
       {
-        heading: "Conditions LDN May Help",
+        heading: "Conditions LDN may help",
         content: "",
         items: [
           "Multiple sclerosis (MS)",
@@ -202,7 +219,7 @@ const conditionData: Record<string, ConditionData> = {
         ],
       },
       {
-        heading: "Our LDN Preparations",
+        heading: "Our LDN preparations",
         content: "",
         items: [
           "Capsules in doses from 0.5mg to 4.5mg",
@@ -219,11 +236,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "♂️",
     title: "Men's Health Compounding",
     subtitle: "Testosterone therapy, vitality, and beyond",
+    metaDescription:
+      "Compounded men's health medications — testosterone replacement therapy, hair loss, and more. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "We provide personalised compounding solutions for men's health conditions, including testosterone replacement therapy, erectile dysfunction, hair loss, and general vitality support.",
     sections: [
       {
-        heading: "Conditions We Address",
+        heading: "Conditions we address",
         content: "",
         items: [
           "Low testosterone (hypogonadism, andropause)",
@@ -235,7 +254,7 @@ const conditionData: Record<string, ConditionData> = {
         ],
       },
       {
-        heading: "Available Formulations",
+        heading: "Available formulations",
         content: "",
         items: [
           "Testosterone creams, gels, and troches",
@@ -253,24 +272,25 @@ const conditionData: Record<string, ConditionData> = {
     icon: "♀️",
     title: "Women's Health Compounding",
     subtitle: "Personalised care for every stage of life",
+    metaDescription:
+      "Compounded women's health medications — BHRT, menopause, PCOS, and more. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "We offer comprehensive compounding solutions for women's health across all life stages, from reproductive health to menopause management and beyond.",
     sections: [
       {
-        heading: "Conditions We Address",
+        heading: "Conditions we address",
         content: "",
         items: [
           "Menopause and perimenopause",
           "PCOS (Polycystic Ovary Syndrome)",
           "Endometriosis",
-          "Fertility support",
           "Vaginal atrophy and dryness",
           "Premenstrual syndrome (PMS/PMDD)",
           "Pregnancy-related conditions",
         ],
       },
       {
-        heading: "Available Formulations",
+        heading: "Available formulations",
         content: "",
         items: [
           "Bioidentical hormone creams and gels",
@@ -288,11 +308,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "🏃",
     title: "Sports Medicine Compounding",
     subtitle: "Performance, recovery, and injury management",
+    metaDescription:
+      "Compounded sports medicine preparations for injury recovery, pain management, and performance support. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "Our sports medicine compounding service provides athletes and active individuals with customised preparations for injury recovery, pain management, and performance support.",
     sections: [
       {
-        heading: "What We Offer",
+        heading: "What we offer",
         content: "",
         items: [
           "Topical anti-inflammatory preparations",
@@ -310,11 +332,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "🦷",
     title: "Dental Compounding",
     subtitle: "Specialised oral and dental preparations",
+    metaDescription:
+      "Compounded dental preparations — topical anaesthetics, antimicrobial rinses, fluoride, and more. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "We prepare customised dental formulations for dentists and patients requiring specialised oral preparations not available commercially.",
     sections: [
       {
-        heading: "Dental Preparations",
+        heading: "Dental preparations",
         content: "",
         items: [
           "Topical anaesthetic gels and creams",
@@ -333,11 +357,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "🫁",
     title: "Gastroenterology Compounding",
     subtitle: "Digestive health and gastrointestinal support",
+    metaDescription:
+      "Compounded preparations for IBS, IBD, Crohn's disease, and other gastrointestinal conditions. Burke Road Compounding Pharmacy, Camberwell.",
     intro:
       "We create customised preparations for gastrointestinal conditions, including formulations that can be tailored for patients with specific dietary requirements or sensitivities.",
     sections: [
       {
-        heading: "Conditions We Address",
+        heading: "Conditions we address",
         content: "",
         items: [
           "Irritable Bowel Syndrome (IBS)",
@@ -348,7 +374,7 @@ const conditionData: Record<string, ConditionData> = {
         ],
       },
       {
-        heading: "Available Formulations",
+        heading: "Available formulations",
         content: "",
         items: [
           "Budesonide enemas and suppositories",
@@ -364,11 +390,13 @@ const conditionData: Record<string, ConditionData> = {
     icon: "🧠",
     title: "Mental Health Compounding",
     subtitle: "Personalised support for mental wellbeing",
+    metaDescription:
+      "Compounded mental health medications — allergen-free, customised doses for anxiety, depression, ADHD, and sleep. Burke Road Compounding Pharmacy.",
     intro:
       "We provide compounding solutions for patients requiring customised mental health medications, including those with sensitivities to commercial formulation excipients.",
     sections: [
       {
-        heading: "Conditions We Support",
+        heading: "Conditions we support",
         content: "",
         items: [
           "Anxiety and panic disorders",
@@ -380,7 +408,7 @@ const conditionData: Record<string, ConditionData> = {
         ],
       },
       {
-        heading: "Compounding Advantages",
+        heading: "Compounding advantages",
         content: "",
         items: [
           "Allergen-free formulations",
@@ -407,9 +435,13 @@ export default function ConditionDetail({ params }: Props) {
   if (!data) {
     return (
       <div className="container py-20 text-center">
-        <h1 className="text-3xl font-bold text-[#1a4d2e] mb-4">Condition Not Found</h1>
-        <p className="text-gray-600 mb-8">We couldn't find information for this condition.</p>
-        <Link href="/conditions" className="text-[#1a4d2e] underline">
+        <h1 className="text-3xl font-bold mb-4" style={{ color: "var(--brp-text)", fontFamily: "var(--font-display)" }}>
+          Condition Not Found
+        </h1>
+        <p className="mb-8" style={{ color: "var(--brp-muted)" }}>
+          We couldn't find information for this condition.
+        </p>
+        <Link href="/conditions" style={{ color: "var(--brp-green-700)" }} className="underline">
           ← Back to Conditions
         </Link>
       </div>
@@ -417,52 +449,64 @@ export default function ConditionDetail({ params }: Props) {
   }
 
   return (
-    <div className="bg-[#f9fafb]">
-      {/* Header */}
-      <div className="brp-gradient py-16 text-white">
+    <>
+      <SEO
+        title={data.title}
+        description={data.metaDescription}
+        canonical={`/conditions/${slug}`}
+      />
+
+      {/* Hero */}
+      <section className="py-16" style={{ backgroundColor: "var(--brp-green-800)" }}>
         <div className="container">
-          <Link href="/conditions" className="text-white/70 hover:text-white text-sm mb-4 inline-block">
-            ← Back to Conditions
-          </Link>
-          <div className="flex items-center gap-4 mb-4">
+          <Breadcrumb
+            items={[
+              { label: "Conditions", href: "/conditions" },
+              { label: data.title },
+            ]}
+          />
+          <div className="flex items-center gap-5 mt-4">
             <span className="text-5xl">{data.icon}</span>
             <div>
               <h1
-                className="text-4xl md:text-5xl font-bold"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-4xl md:text-5xl font-bold text-white"
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 {data.title}
               </h1>
-              <p className="text-white/85 text-lg mt-1">{data.subtitle}</p>
+              <p className="text-white/80 text-lg mt-1">{data.subtitle}</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="container py-12 max-w-4xl">
         {/* Intro */}
-        <div className="bg-white rounded-xl p-8 shadow-sm border border-border mb-8">
-          <p className="text-gray-700 leading-relaxed text-lg">{data.intro}</p>
+        <div className="brp-card p-8 mb-8">
+          <p className="leading-relaxed text-lg" style={{ color: "#374151" }}>{data.intro}</p>
         </div>
 
         {/* Sections */}
         {data.sections.map((section) => (
-          <div key={section.heading} className="bg-white rounded-xl p-8 shadow-sm border border-border mb-6">
+          <div key={section.heading} className="brp-card p-8 mb-6">
             <h2
-              className="text-2xl font-bold text-[#1a4d2e] mb-4"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-2xl font-bold mb-4"
+              style={{ fontFamily: "var(--font-display)", color: "var(--brp-text)" }}
             >
               {section.heading}
             </h2>
             {section.content && (
-              <p className="text-gray-700 leading-relaxed mb-4">{section.content}</p>
+              <p className="leading-relaxed mb-4" style={{ color: "#374151" }}>{section.content}</p>
             )}
             {section.items && (
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {section.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-700">
-                    <div className="w-5 h-5 rounded-full bg-[#f0f7f4] border border-[#2d6a4f]/30 flex items-center justify-center shrink-0 mt-0.5">
-                      <div className="w-2 h-2 rounded-full bg-[#2d6a4f]" />
+                  <li key={item} className="flex items-start gap-3" style={{ color: "#374151" }}>
+                    <div
+                      className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                      style={{ backgroundColor: "var(--brp-green-50)", border: "1px solid var(--brp-green-200)" }}
+                    >
+                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "var(--brp-green-700)" }} />
                     </div>
                     <span className="text-sm leading-relaxed">{item}</span>
                   </li>
@@ -474,18 +518,26 @@ export default function ConditionDetail({ params }: Props) {
 
         {/* Disclaimer */}
         {data.disclaimer && (
-          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
-            <p className="text-amber-800 text-sm leading-relaxed">
-              <strong>⚠️ Important:</strong> {data.disclaimer}
+          <div
+            className="rounded-xl p-5 mb-8 flex gap-3"
+            style={{ backgroundColor: "#fef9c3", border: "1px solid #fde047" }}
+          >
+            <AlertTriangle className="w-5 h-5 text-yellow-600 shrink-0 mt-0.5" />
+            <p className="text-sm text-yellow-800 leading-relaxed">
+              <strong>Important:</strong> {data.disclaimer}
             </p>
           </div>
         )}
 
         {/* Upload Prescription CTA */}
-        <div className="brp-gradient rounded-2xl p-10 text-white text-center">
+        <div
+          className="rounded-2xl p-10 text-white text-center"
+          style={{ background: "linear-gradient(135deg, var(--brp-green-800) 0%, var(--brp-green-600) 100%)" }}
+        >
+          <Upload className="w-10 h-10 mx-auto mb-4 opacity-80" />
           <h2
             className="text-3xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Ready to get started?
           </h2>
@@ -494,23 +546,23 @@ export default function ConditionDetail({ params }: Props) {
             prescription to get started.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="tel:0398898622"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#84cc16] hover:bg-[#65a30d] text-gray-900 font-bold rounded-xl transition-all"
+            <Link
+              href="/upload-prescription"
+              className="inline-flex items-center gap-2 px-7 py-3.5 font-bold rounded-xl transition-all"
+              style={{ backgroundColor: "var(--brp-brass-500)", color: "white" }}
             >
-              Call (03) 9889 8622
-            </a>
+              Upload Prescription <ArrowRight className="w-4 h-4" />
+            </Link>
             <a
-              href="https://wa.me/61398898622"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-xl border border-white/40 transition-all"
+              href={`tel:${BUSINESS.phone.landlineE164}`}
+              className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold rounded-xl border border-white/40 transition-all"
+              style={{ backgroundColor: "rgba(255,255,255,0.15)", color: "white" }}
             >
-              💬 Send Prescription via WhatsApp
+              Call {BUSINESS.phone.landline}
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

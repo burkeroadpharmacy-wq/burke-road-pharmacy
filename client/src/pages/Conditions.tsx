@@ -1,3 +1,4 @@
+import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
 import { conditions } from "@/data/conditions";
 
@@ -5,7 +6,7 @@ export default function Conditions() {
   const displayConditions = conditions;
 
   return (
-    <div className="bg-[#f9fafb]">
+    <div className="bg-background">
       <div className="brp-gradient py-16 text-white">
         <div className="container">
           <Link href="/compounding" className="text-white/70 hover:text-white text-sm mb-4 inline-block">
@@ -13,7 +14,7 @@ export default function Conditions() {
           </Link>
           <h1
             className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Browse by Condition
           </h1>
@@ -27,7 +28,7 @@ export default function Conditions() {
         <div className="bg-white rounded-xl p-6 mb-10 shadow-sm border border-border">
           <h2
             className="text-2xl font-bold text-[#1a4d2e] mb-3"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Personalised Compounding Solutions
           </h2>
@@ -49,8 +50,8 @@ export default function Conditions() {
             >
               <div className="text-5xl mb-4">{c.icon}</div>
               <h3
-                className="text-xl font-bold text-[#1a4d2e] mb-2 group-hover:text-[#2d6a4f]"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-xl font-bold text-[#1a4d2e] mb-2 group-hover:text-[#1a4d2e]-700"
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 {c.title}
               </h3>
@@ -62,7 +63,7 @@ export default function Conditions() {
         <div className="mt-16 brp-gradient rounded-2xl p-10 text-white text-center">
           <h2
             className="text-3xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Not sure where to start?
           </h2>
@@ -71,13 +72,13 @@ export default function Conditions() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="tel:0398898622"
+              href={`tel:${BUSINESS.phone.landlineE164}`}
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#84cc16] hover:bg-[#65a30d] text-gray-900 font-bold rounded-xl transition-all"
             >
-              Call (03) 9889 8622
+              Call {BUSINESS.phone.landline}
             </a>
             <a
-              href="https://wa.me/61398898622"
+              href={BUSINESS.urls.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-xl border border-white/40 transition-all"

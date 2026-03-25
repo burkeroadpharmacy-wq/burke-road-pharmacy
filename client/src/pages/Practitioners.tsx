@@ -1,3 +1,4 @@
+import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
@@ -24,7 +25,7 @@ const resources = [
     icon: "📞",
     title: "Clinical Consultation",
     desc: "Speak directly with our compounding pharmacists for formulation advice, dosing guidance, and therapeutic recommendations.",
-    href: "tel:0398898622",
+    href: `tel:${BUSINESS.phone.landlineE164}`,
   },
   {
     icon: "📚",
@@ -65,7 +66,7 @@ const articles = [
 
 export default function Practitioners() {
   return (
-    <div className="bg-[#f9fafb]">
+    <div className="bg-background">
       {/* Header */}
       <div className="brp-gradient py-16 text-white">
         <div className="container">
@@ -74,7 +75,7 @@ export default function Practitioners() {
           </Link>
           <h1
             className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Practitioner Hub
           </h1>
@@ -89,7 +90,7 @@ export default function Practitioners() {
         <div className="bg-white rounded-xl p-8 shadow-sm border border-border mb-12">
           <h2
             className="text-2xl font-bold text-[#1a4d2e] mb-3"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Welcome to Our Practitioner Hub
           </h2>
@@ -117,14 +118,14 @@ export default function Practitioners() {
               <div className="text-4xl">{r.icon}</div>
               <div>
                 <h3
-                  className="text-xl font-bold text-[#1a4d2e] mb-2 group-hover:text-[#2d6a4f]"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  className="text-xl font-bold text-[#1a4d2e] mb-2 group-hover:text-[#1a4d2e]-700"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   {r.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{r.desc}</p>
               </div>
-              <div className="mt-auto flex items-center gap-1 text-[#2d6a4f] text-sm font-semibold group-hover:gap-2 transition-all">
+              <div className="mt-auto flex items-center gap-1 text-[#1a4d2e]-700 text-sm font-semibold group-hover:gap-2 transition-all">
                 Access <ArrowRight className="w-4 h-4" />
               </div>
             </a>
@@ -135,7 +136,7 @@ export default function Practitioners() {
         <div className="bg-white rounded-xl p-8 shadow-sm border border-border mb-12">
           <h2
             className="text-2xl font-bold text-[#1a4d2e] mb-6"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Clinical Articles &amp; Resources
           </h2>
@@ -146,14 +147,14 @@ export default function Practitioners() {
             {articles.map((a) => (
               <div
                 key={a.title}
-                className="p-5 border-l-4 border-[#2d6a4f] bg-[#f8faf9] rounded-r-xl hover:bg-[#f0f7f4] transition-colors"
+                className="p-5 border-l-4 border-[#2d6a4f] bg-[#f8faf9] rounded-r-xl hover:bg-muted transition-colors"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <span className="brp-badge text-xs mb-2 inline-block">{a.category}</span>
                     <h4
                       className="font-bold text-[#1a4d2e] text-lg mb-1"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
+                      style={{ fontFamily: "var(--font-display)" }}
                     >
                       {a.title}
                     </h4>
@@ -161,7 +162,7 @@ export default function Practitioners() {
                   </div>
                   <Link
                     href="/knowledge-centre"
-                    className="text-[#2d6a4f] hover:text-[#1a4d2e] text-sm font-semibold whitespace-nowrap"
+                    className="text-[#1a4d2e]-700 hover:text-[#1a4d2e] text-sm font-semibold whitespace-nowrap"
                   >
                     Read →
                   </Link>
@@ -175,7 +176,7 @@ export default function Practitioners() {
         <div className="brp-gradient rounded-2xl p-10 text-white text-center">
           <h2
             className="text-3xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Partner with us for your patients
           </h2>
@@ -185,10 +186,10 @@ export default function Practitioners() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="tel:0398898622"
+              href={`tel:${BUSINESS.phone.landlineE164}`}
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#84cc16] hover:bg-[#65a30d] text-gray-900 font-bold rounded-xl transition-all"
             >
-              Call (03) 9889 8622
+              Call {BUSINESS.phone.landline}
             </a>
             <Link
               href="/prescribers"

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
 import { Plus, Trash2, FileText, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -95,7 +96,7 @@ export default function Prescribers() {
       }
     } catch (err) {
       console.error(err);
-      toast.error("Submission failed. Please call (03) 9889 8622.");
+      toast.error("Submission failed. Please call us directly.");
     } finally {
       setIsSubmitting(false);
     }
@@ -107,7 +108,7 @@ export default function Prescribers() {
   };
 
   return (
-    <div className="bg-[#f9fafb]">
+    <div className="bg-background">
       {/* Header */}
       <div className="brp-gradient py-12 text-white">
         <div className="container">
@@ -116,7 +117,7 @@ export default function Prescribers() {
           </Link>
           <h1
             className="text-4xl font-bold mb-2"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Prescribers Portal
           </h1>
@@ -128,10 +129,10 @@ export default function Prescribers() {
 
       <div className="container py-10 max-w-4xl">
         {/* Intro */}
-        <div className="bg-[#f0f7f4] border border-[#2d6a4f]/30 rounded-xl p-5 mb-8">
+        <div className="bg-muted border border-[#2d6a4f]/30 rounded-xl p-5 mb-8">
           <h2
-            className="text-lg font-bold text-[#2d6a4f] mb-1"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            className="text-lg font-bold text-[#1a4d2e]-700 mb-1"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Compounding Prescription Generator
           </h2>
@@ -377,7 +378,7 @@ export default function Prescribers() {
 
         <button
           onClick={addMed}
-          className="flex items-center gap-2 text-[#1a4d2e] font-semibold text-sm mb-8 hover:text-[#2d6a4f]"
+          className="flex items-center gap-2 text-[#1a4d2e] font-semibold text-sm mb-8 hover:text-[#1a4d2e]-700"
         >
           <Plus className="w-5 h-5" /> Add Another Medication
         </button>
@@ -427,7 +428,7 @@ export default function Prescribers() {
           <Button
             onClick={handleSubmit}
             disabled={isSubmitting}
-            className="flex items-center gap-2 bg-[#2d6a4f] hover:bg-[#1a4d2e] text-white px-8 py-3"
+            className="flex items-center gap-2 bg-[#1a4d2e]-700 hover:bg-[#1a4d2e] text-white px-8 py-3"
           >
             <Send className="w-5 h-5" /> {isSubmitting ? "Submitting..." : "Submit to Pharmacy"}
           </Button>
@@ -439,8 +440,8 @@ export default function Prescribers() {
             <FileText className="w-5 h-5" /> Generate &amp; Print
           </Button>
           <a
-            href="tel:0398898622"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#f0f7f4] hover:bg-[#e0f0e8] text-[#1a4d2e] font-semibold rounded-lg border border-[#2d6a4f]/20 transition-all text-sm"
+            href={`tel:${BUSINESS.phone.landlineE164}`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-muted hover:bg-[#e0f0e8] text-[#1a4d2e] font-semibold rounded-lg border border-[#2d6a4f]/20 transition-all text-sm"
           >
             📞 Call for Assistance
           </a>

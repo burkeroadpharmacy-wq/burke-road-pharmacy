@@ -38,7 +38,7 @@ export const faqs: FAQ[] = [
   {
     question: "Can I upload my prescription online?",
     answer:
-      "Yes. You can send your prescription via the contact form on this website, by email to info@burkeroadpharmacy.com.au, or by WhatsApp to (03) 9889 8622. We also accept electronic prescriptions (eRx and MyScript).",
+      "Yes. You can send your prescription via the contact form on this website, by email to info@burkeroadpharmacy.com.au, or by WhatsApp to 0450 352 483. We also accept electronic prescriptions (eRx and MyScript).",
     category: "Prescriptions",
   },
   {

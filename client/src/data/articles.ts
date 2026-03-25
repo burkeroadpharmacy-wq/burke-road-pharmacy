@@ -6,6 +6,9 @@ export interface Article {
   readTimeMinutes: number;
   imageUrl?: string;
   publishedAt: string;
+  content?: string;
+  author?: string;
+  relatedConditionSlug?: string;
 }
 
 export const articles: Article[] = [
@@ -17,6 +20,8 @@ export const articles: Article[] = [
     category: "Hormone Therapy",
     readTimeMinutes: 6,
     publishedAt: "2025-09-01",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "hormone-therapy",
   },
   {
     slug: "low-dose-naltrexone-guide",
@@ -26,6 +31,8 @@ export const articles: Article[] = [
     category: "Pain Management",
     readTimeMinutes: 7,
     publishedAt: "2025-10-15",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "low-dose-naltrexone",
   },
   {
     slug: "compounding-for-children",
@@ -35,6 +42,8 @@ export const articles: Article[] = [
     category: "Paediatrics",
     readTimeMinutes: 4,
     publishedAt: "2025-11-01",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "paediatrics",
   },
   {
     slug: "topical-pain-management",
@@ -44,6 +53,8 @@ export const articles: Article[] = [
     category: "Pain Management",
     readTimeMinutes: 5,
     publishedAt: "2025-11-20",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "pain-management",
   },
   {
     slug: "pbs-pricing-guide-2026",
@@ -53,6 +64,7 @@ export const articles: Article[] = [
     category: "PBS & Dispensing",
     readTimeMinutes: 3,
     publishedAt: "2026-01-01",
+    author: "Burke Road Compounding Pharmacists",
   },
   {
     slug: "veterinary-compounding",
@@ -62,6 +74,8 @@ export const articles: Article[] = [
     category: "Veterinary",
     readTimeMinutes: 4,
     publishedAt: "2026-01-15",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "veterinary",
   },
   {
     slug: "dermatology-compounding",
@@ -71,6 +85,8 @@ export const articles: Article[] = [
     category: "Dermatology",
     readTimeMinutes: 5,
     publishedAt: "2026-02-01",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "dermatology",
   },
   {
     slug: "chemist-care-now-guide",
@@ -80,6 +96,7 @@ export const articles: Article[] = [
     category: "Services",
     readTimeMinutes: 4,
     publishedAt: "2026-02-20",
+    author: "Burke Road Compounding Pharmacists",
   },
 ];
 

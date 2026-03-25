@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { BUSINESS } from "@/config/business";
 import { Phone, MapPin, Clock, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -46,14 +47,14 @@ export default function Contact() {
       }
     } catch (err) {
       console.error(err);
-      toast.error("Failed to send message. Please call us directly on (03) 9889 8622.");
+      toast.error(`Failed to send message. Please call us directly on ${BUSINESS.phone.landline}.`);
     } finally {
       setIsPending(false);
     }
   };
 
   return (
-    <div className="bg-[#f9fafb]">
+    <div className="bg-background">
       {/* Header */}
       <div className="brp-gradient py-16 text-white">
         <div className="container">
@@ -62,7 +63,7 @@ export default function Contact() {
           </Link>
           <h1
             className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Contact Us
           </h1>
@@ -78,27 +79,27 @@ export default function Contact() {
           <div>
             <h2
               className="text-2xl font-bold text-[#1a4d2e] mb-8"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "var(--font-display)" }}
             >
               Get in touch
             </h2>
 
             <div className="space-y-6 mb-10">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#f0f7f4] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6 text-[#1a4d2e]" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
                   <p className="text-gray-600 text-sm">
-                    Shop 3/1 Burke Road<br />
-                    Camberwell VIC 3124
+                    {BUSINESS.address.street}<br />
+                    {BUSINESS.address.suburb} {BUSINESS.address.state} {BUSINESS.address.postcode}
                   </p>
                   <a
-                    href="https://maps.google.com/?q=Burke+Road+Compounding+Pharmacy+Camberwell"
+                    href={BUSINESS.urls.googleMaps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#2d6a4f] text-sm hover:underline mt-1 inline-block"
+                    className="text-[#1a4d2e]-700 text-sm hover:underline mt-1 inline-block"
                   >
                     Get directions →
                   </a>
@@ -106,25 +107,25 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#f0f7f4] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
                   <Phone className="w-6 h-6 text-[#1a4d2e]" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                  <a href="tel:0398898622" className="text-gray-600 text-sm hover:text-[#1a4d2e]">
-                    (03) 9889 8622
+                  <a href={`tel:${BUSINESS.phone.landlineE164}`} className="text-gray-600 text-sm hover:text-[#1a4d2e]">
+                    {BUSINESS.phone.landline}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#f0f7f4] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
                   <MessageCircle className="w-6 h-6 text-[#1a4d2e]" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">WhatsApp</h3>
                   <a
-                    href="https://wa.me/61398898622"
+                    href={BUSINESS.urls.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 text-sm hover:text-[#1a4d2e]"
@@ -135,22 +136,22 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#f0f7f4] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
                   <Mail className="w-6 h-6 text-[#1a4d2e]" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                   <a
-                    href="mailto:info@burkeroadpharmacy.com.au"
+                    href={`mailto:${BUSINESS.email}`}
                     className="text-gray-600 text-sm hover:text-[#1a4d2e]"
                   >
-                    info@burkeroadpharmacy.com.au
+                    {BUSINESS.email}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#f0f7f4] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
                   <Clock className="w-6 h-6 text-[#1a4d2e]" />
                 </div>
                 <div>
@@ -192,17 +193,17 @@ export default function Contact() {
           <div>
             <h2
               className="text-2xl font-bold text-[#1a4d2e] mb-8"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "var(--font-display)" }}
             >
               Send us a message
             </h2>
 
             {submitted ? (
-              <div className="bg-[#f0f7f4] border border-[#2d6a4f]/30 rounded-xl p-8 text-center">
+              <div className="bg-muted border border-[#2d6a4f]/30 rounded-xl p-8 text-center">
                 <div className="text-5xl mb-4">✅</div>
                 <h3
                   className="text-xl font-bold text-[#1a4d2e] mb-2"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   Message Sent!
                 </h3>
@@ -211,7 +212,7 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 text-[#2d6a4f] text-sm underline"
+                  className="mt-6 text-[#1a4d2e]-700 text-sm underline"
                 >
                   Send another message
                 </button>
@@ -283,7 +284,7 @@ export default function Contact() {
 
                 <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
                   <p className="text-amber-800 text-xs">
-                    ⚠️ For urgent medical matters, please call us directly on (03) 9889 8622
+                    ⚠️ For urgent medical matters, please call us directly on {BUSINESS.phone.landline}
                     or contact your nearest emergency department.
                   </p>
                 </div>
@@ -291,7 +292,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isPending}
-                  className="w-full bg-[#1a4d2e] hover:bg-[#2d6a4f] text-white py-3"
+                  className="w-full bg-[#1a4d2e] hover:bg-[#1a4d2e]-700 text-white py-3"
                 >
                   {isPending ? "Sending..." : "Send Message"}
                 </Button>

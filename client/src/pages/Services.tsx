@@ -1,3 +1,4 @@
+import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5";
@@ -127,7 +128,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="bg-[#f9fafb]">
+    <div className="bg-background">
       {/* Header */}
       <div className="brp-gradient py-16 text-white">
         <div className="container">
@@ -136,7 +137,7 @@ export default function Services() {
           </Link>
           <h1
             className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Our Services
           </h1>
@@ -175,7 +176,7 @@ export default function Services() {
                   <span className="text-4xl">{s.icon}</span>
                   <h2
                     className="text-3xl font-bold text-[#1a4d2e]"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
                     {s.title}
                   </h2>
@@ -184,8 +185,8 @@ export default function Services() {
                 <ul className="space-y-2 mb-6">
                   {s.details.map((d) => (
                     <li key={d} className="flex items-start gap-3 text-gray-700 text-sm">
-                      <div className="w-5 h-5 rounded-full bg-[#f0f7f4] border border-[#2d6a4f]/30 flex items-center justify-center shrink-0 mt-0.5">
-                        <div className="w-2 h-2 rounded-full bg-[#2d6a4f]" />
+                      <div className="w-5 h-5 rounded-full bg-muted border border-[#2d6a4f]/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <div className="w-2 h-2 rounded-full bg-[#1a4d2e]-700" />
                       </div>
                       {d}
                     </li>
@@ -194,7 +195,7 @@ export default function Services() {
                 {s.link && (
                   <Link
                     href={s.link}
-                    className="inline-flex items-center gap-2 text-[#2d6a4f] font-semibold text-sm hover:text-[#1a4d2e]"
+                    className="inline-flex items-center gap-2 text-[#1a4d2e]-700 font-semibold text-sm hover:text-[#1a4d2e]"
                   >
                     {s.linkLabel} →
                   </Link>
@@ -208,7 +209,7 @@ export default function Services() {
                     className="rounded-2xl shadow-lg w-full object-cover aspect-[4/3]"
                   />
                 ) : (
-                  <div className="rounded-2xl bg-[#f0f7f4] border border-[#2d6a4f]/20 aspect-[4/3] flex items-center justify-center">
+                  <div className="rounded-2xl bg-muted border border-[#2d6a4f]/20 aspect-[4/3] flex items-center justify-center">
                     <span className="text-8xl opacity-30">{s.icon}</span>
                   </div>
                 )}
@@ -221,7 +222,7 @@ export default function Services() {
         <div className="brp-gradient rounded-2xl p-10 text-white text-center mt-16">
           <h2
             className="text-3xl font-bold mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Questions about our services?
           </h2>
@@ -230,10 +231,10 @@ export default function Services() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="tel:0398898622"
+              href={`tel:${BUSINESS.phone.landlineE164}`}
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#84cc16] hover:bg-[#65a30d] text-gray-900 font-bold rounded-xl transition-all"
             >
-              📞 Call (03) 9889 8622
+              📞 Call {BUSINESS.phone.landline}
             </a>
             <Link
               href="/contact"
