@@ -58,3 +58,10 @@
 - [x] Generate deployment README for VentraIP cPanel
 - [x] Verify pnpm build produces clean static dist/
 - [x] Confirm no env vars required for core functionality (only VITE_WEB3FORMS_KEY for forms)
+
+## Phase 4: Fix Manus Deployment
+- [x] Add minimal Express static server (server/index.ts) to satisfy platform container requirement
+- [x] Restore esbuild server bundling in build script (outputs dist/index.js)
+- [x] Restore Vite build output to dist/public/ (server serves from there)
+- [x] Verify pnpm build produces both dist/index.js and dist/public/index.html
+- [x] Checkpoint and push to GitHub
