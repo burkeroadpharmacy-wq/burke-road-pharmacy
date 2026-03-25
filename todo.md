@@ -198,3 +198,4 @@
 - [x] Add 10 new Knowledge Centre articles
 - [x] Add Recent Articles column to footer
 - [ ] Improve testimonials section (gold stars, carousel)
+- [x] Add Book Online button to hero section linking to MedAdvisor

@@ -5,7 +5,7 @@
 import { Link } from "wouter";
 import {
   ArrowRight, Star, Truck, Syringe, Pill, Clock, Phone, MapPin,
-  FlaskConical, Shield, HeartPulse, ChevronRight, Upload, MessageCircle
+  FlaskConical, Shield, HeartPulse, ChevronRight, Upload, MessageCircle, CalendarCheck
 } from "lucide-react";
 import { conditions } from "@/data/conditions";
 import ConditionIcon from "@/components/ConditionIcon";
@@ -107,9 +107,19 @@ export default function Home() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
+                  href={BUSINESS.urls.booking}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 font-bold rounded-xl border-2 border-white/60 hover:border-white transition-all"
+                  style={{ backgroundColor: "rgba(255,255,255,0.15)", color: "white" }}
+                >
+                  <CalendarCheck className="w-5 h-5" />
+                  Book Online
+                </a>
+                <a
                   href={`tel:${BUSINESS.phone.landlineE164}`}
-                  className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold rounded-xl border border-white/40 transition-all"
-                  style={{ backgroundColor: "rgba(255,255,255,0.12)", color: "white" }}
+                  className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold rounded-xl border border-white/30 transition-all"
+                  style={{ backgroundColor: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.85)" }}
                 >
                   <Phone className="w-5 h-5" />
                   {BUSINESS.phone.landline}
