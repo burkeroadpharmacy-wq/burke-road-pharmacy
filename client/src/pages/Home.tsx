@@ -8,10 +8,12 @@ import {
   FlaskConical, Shield, HeartPulse, ChevronRight, Upload, MessageCircle
 } from "lucide-react";
 import { conditions } from "@/data/conditions";
+import ConditionIcon from "@/components/ConditionIcon";
 import { testimonials } from "@/data/testimonials";
 import { services } from "@/data/services";
 import { BUSINESS } from "@/config/business";
 import SEO, { localBusinessSchema } from "@/components/SEO";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5";
 
@@ -75,7 +77,7 @@ export default function Home() {
         <section className="relative min-h-[90vh] flex items-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${CDN}/hero-pharmacy-modern_742c27b2.jpg)` }}
+            style={{ backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5/hero-pharmacy-modern-RBJS4zLy5HAbmDZfWBQqxy.webp)` }}
           />
           <div className="absolute inset-0" style={{
             background: "linear-gradient(105deg, rgba(15,34,24,0.93) 0%, rgba(26,58,46,0.80) 55%, rgba(26,58,46,0.30) 100%)"
@@ -135,20 +137,20 @@ export default function Home() {
         {/* ── 3. Services grid ─────────────────────────────── */}
         <section className="py-20 bg-white">
           <div className="container">
-            <div className="text-center mb-14">
+            <ScrollReveal className="text-center mb-14">
               <div className="brp-badge mx-auto mb-4">Our Services</div>
               <h2 className="brp-section-heading text-4xl mb-4">Everything you need, in one pharmacy</h2>
               <p className="max-w-2xl mx-auto" style={{ color: "var(--brp-muted)" }}>
                 From PBS dispensing to personalised compounding, we offer a comprehensive range
                 of pharmacy services for the whole community.
               </p>
-            </div>
+            </ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.slice(0, 6).map((s) => (
+              {services.slice(0, 6).map((s, i) => (
+                <ScrollReveal key={s.title} delay={i * 80}>
                 <Link
-                  key={s.title}
                   href={s.href}
-                  className="brp-card p-6 group flex flex-col gap-4"
+                  className="brp-card p-6 group flex flex-col gap-4 h-full"
                 >
                   <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center transition-colors"
@@ -166,6 +168,7 @@ export default function Home() {
                     Learn more <ArrowRight className="w-4 h-4" />
                   </div>
                 </Link>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -175,7 +178,7 @@ export default function Home() {
         <section className="py-20" style={{ backgroundColor: "var(--brp-green-50)" }}>
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
+              <ScrollReveal direction="left">
                 <div className="brp-badge mb-6">Specialised Compounding</div>
                 <h2 className="text-4xl font-bold leading-tight mb-6" style={{ fontFamily: "var(--font-display)", color: "var(--brp-text)" }}>
                   Medications crafted <em style={{ color: "var(--brp-green-600)" }}>for you</em>
@@ -214,10 +217,11 @@ export default function Home() {
                     <Upload className="w-4 h-4" /> Upload Prescription
                   </Link>
                 </div>
-              </div>
+              </ScrollReveal>
+              <ScrollReveal direction="right">
               <div className="relative">
                 <img
-                  src={`${CDN}/compounding-lab_a806e1b3.jpg`}
+                  src={`https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5/compounding-lab-professional-Cb4PN2CBX4z9j3EQRd4C6T.webp`}
                   alt="Compounding laboratory at Burke Road Pharmacy"
                   className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
@@ -231,33 +235,37 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
 
-        {/* ── 5. Browse by Condition ───────────────────────── */}
+        {/* ── 5. Browse by Condition ─────────────────────── */}
         <section className="py-20 bg-white">
           <div className="container">
-            <div className="text-center mb-12">
+            <ScrollReveal className="text-center mb-12">
               <div className="brp-badge mx-auto mb-4">Compounding Solutions</div>
               <h2 className="brp-section-heading text-4xl mb-4">Browse by Condition</h2>
               <p className="max-w-xl mx-auto" style={{ color: "var(--brp-muted)" }}>
                 We compound specialised medications for a wide range of health conditions.
               </p>
-            </div>
+            </ScrollReveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {conditions.map((c) => (
+              {conditions.map((c, i) => (
+                <ScrollReveal key={c.slug} delay={i * 50}>
                 <Link
-                  key={c.slug}
                   href={`/conditions/${c.slug}`}
                   className="brp-card p-4 text-center group"
                 >
-                  <div className="text-3xl mb-2">{c.icon}</div>
-                  <div className="text-xs font-semibold leading-tight" style={{ fontFamily: "var(--font-display)", color: "var(--brp-text)" }}>
-                    {c.title}
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-2 transition-colors group-hover:bg-[#1a4d2e] group-hover:text-white" style={{ backgroundColor: "var(--brp-green-50)", color: "var(--brp-green-800)" }}>
+                    <ConditionIcon name={c.icon} className="w-5 h-5" />
                   </div>
-                </Link>
-              ))}
+                  <div className="text-xs font-semibold leading-tight" style={{ fontFamily: "var(--font-display)", color: "var(--brp-text)" }}>
+                  {c.title}
+                </div>
+              </Link>
+              </ScrollReveal>
+            ))}
             </div>
             <div className="text-center mt-8">
               <Link
@@ -372,10 +380,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── 9. Testimonials ──────────────────────────────── */}
+        {/* ── 9. Testimonials ─────────────────────────────── */}
         <section className="py-20 bg-white">
           <div className="container">
-            <div className="text-center mb-12">
+            <ScrollReveal className="text-center mb-12">
               <div className="brp-badge mx-auto mb-4">Patient Reviews</div>
               <h2 className="brp-section-heading text-4xl mb-4">What our patients say</h2>
               <div className="flex items-center justify-center gap-2" style={{ color: "var(--brp-muted)" }}>
@@ -387,10 +395,11 @@ export default function Home() {
                 <span className="font-semibold" style={{ color: "var(--brp-text)" }}>4.9 / 5</span>
                 <span>on Google Reviews</span>
               </div>
-            </div>
+            </ScrollReveal>
             <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((t) => (
-                <div key={t.name} className="brp-card p-6">
+              {testimonials.map((t, i) => (
+                <ScrollReveal key={t.name} delay={i * 100}>
+                <div className="brp-card p-6">
                   <div className="flex mb-3">
                     {Array.from({ length: t.rating }).map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -415,6 +424,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -432,27 +442,28 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { title: "Understanding Compounding Pharmacy", category: "Compounding", slug: "understanding-compounding" },
-                { title: "BHRT: What You Need to Know", category: "Hormone Health", slug: "bhrt-guide" },
-                { title: "PBS Safety Net: How It Works", category: "PBS", slug: "pbs-safety-net" },
-              ].map((article) => (
-                <Link key={article.slug} href={`/knowledge-centre`} className="brp-card p-6 group">
-                  <div className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--brp-brass-700)" }}>
-                    {article.category}
-                  </div>
-                  <h3 className="font-bold mb-3 group-hover:underline" style={{ fontFamily: "var(--font-display)", color: "var(--brp-text)" }}>
-                    {article.title}
-                  </h3>
-                  <div className="flex items-center gap-1 text-sm font-semibold" style={{ color: "var(--brp-green-600)" }}>
-                    Read article <ChevronRight className="w-4 h-4" />
-                  </div>
-                </Link>
+                { title: "Understanding Bioidentical Hormone Replacement Therapy", category: "Hormone Therapy", slug: "understanding-bhrt" },
+                { title: "PBS Co-payment Rates 2026: What You Need to Know", category: "PBS & Dispensing", slug: "pbs-pricing-guide-2026" },
+                { title: "Chemist Care Now: Getting Treatment Without a GP Appointment", category: "Services", slug: "chemist-care-now-guide" },
+              ].map((article, i) => (
+                <ScrollReveal key={article.slug} delay={i * 100}>
+                  <Link href={`/knowledge-centre/${article.slug}`} className="brp-card p-6 group block">
+                    <div className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--brp-brass-700)" }}>
+                      {article.category}
+                    </div>
+                    <h3 className="font-bold mb-3 group-hover:underline" style={{ fontFamily: "var(--font-display)", color: "var(--brp-text)" }}>
+                      {article.title}
+                    </h3>
+                    <div className="flex items-center gap-1 text-sm font-semibold" style={{ color: "var(--brp-green-600)" }}>
+                      Read article <ChevronRight className="w-4 h-4" />
+                    </div>
+                  </Link>
+                </ScrollReveal>
               ))}
-            </div>
+              </div>
             <div className="text-center mt-8">
               <Link
-                href="/knowledge-centre"
-                className="inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-xl transition-all text-white"
+                href="/knowledge-centre"                className="inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-xl transition-all text-white"
                 style={{ backgroundColor: "var(--brp-green-800)" }}
               >
                 Visit Knowledge Centre <ArrowRight className="w-4 h-4" />

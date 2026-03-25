@@ -97,7 +97,7 @@ export default function About() {
             </div>
             <div>
               <img
-                src={`${CDN}/compounding-lab_a806e1b3.jpg`}
+                src={`https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5/compounding-lab-professional-Cb4PN2CBX4z9j3EQRd4C6T.webp`}
                 alt="Burke Road Pharmacy compounding laboratory"
                 className="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
               />

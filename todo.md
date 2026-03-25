@@ -183,3 +183,18 @@
 - [x] Add fax number to Contact page
 - [x] Fix broken /vaccinations footer link to /services#vaccinations
 - [x] Fix broken /delivery footer link
+
+## Phase 12: Audit Improvements
+- [ ] Replace emoji icons in Conditions grid with SVG icons
+- [ ] Replace emoji icons in Services data with Lucide icons
+- [ ] Replace emoji icons in Home services section
+- [ ] Generate hero image (Australian female pharmacist, compounding lab)
+- [ ] Generate about/compounding lab images
+- [ ] Generate PBS section image
+- [ ] Upload generated images to CDN and update references
+- [ ] Add scroll-triggered fade-in animations sitewide
+- [ ] Add counter animations for stats section
+- [ ] Add hover lift effect on service/condition cards
+- [x] Add 10 new Knowledge Centre articles
+- [x] Add Recent Articles column to footer
+- [ ] Improve testimonials section (gold stars, carousel)

@@ -1,5 +1,6 @@
 import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
+import ConditionIcon from "@/components/ConditionIcon";
 
 const BOOKING_URL = "https://www.medadvisor.com.au/Network/BurkeRoadDiscountDrugStore";
 
@@ -8,7 +9,7 @@ const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfH
 const services = [
   {
     id: "pbs",
-    icon: "💊",
+    icon: "pill",
     title: "PBS Dispensing",
     desc: "We dispense all Pharmaceutical Benefits Scheme (PBS) medications at government-regulated co-payment rates. We accept Medicare, DVA, and all concession cards.",
     details: [
@@ -23,7 +24,7 @@ const services = [
   },
   {
     id: "vaccinations",
-    icon: "💉",
+    icon: "syringe",
     title: "Vaccinations",
     desc: "Our trained pharmacists administer a range of vaccines. No appointment needed for most vaccines — walk in during trading hours.",
     details: [
@@ -41,7 +42,7 @@ const services = [
   },
   {
     id: "compounding",
-    icon: "🔬",
+    icon: "flask",
     title: "Compounding",
     desc: "Our QCPP-accredited compounding laboratory creates personalised medications tailored to your exact needs.",
     details: [
@@ -54,11 +55,11 @@ const services = [
     ],
     link: "/compounding",
     linkLabel: "Learn more about compounding",
-    image: `${CDN}/compounding-lab_a806e1b3.jpg`,
+    image: `https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5/compounding-lab-professional-Cb4PN2CBX4z9j3EQRd4C6T.webp`,
   },
   {
     id: "chemist-care-now",
-    icon: "🩺",
+    icon: "stethoscope",
     title: "Chemist Care Now",
     desc: "Minor ailment consultations without a GP appointment. Our pharmacists can assess and treat a range of common conditions on the spot.",
     details: [
@@ -72,11 +73,11 @@ const services = [
     link: BOOKING_URL,
     linkLabel: "Book a Chemist Care Now consultation",
     linkExternal: true,
-    image: `${CDN}/consultation-friendly_d129865d.jpg`,
+    image: `https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5/pharmacist-consultation-9zdBRzEKueGwYesG2VcxhQ.webp`,
   },
   {
     id: "daa",
-    icon: "📦",
+    icon: "clipboard",
     title: "Dose Administration Aids",
     desc: "We pack your medications into SureMed blister packs or Webster-paks to help you manage complex medication regimens safely and accurately.",
     details: [
@@ -91,7 +92,7 @@ const services = [
   },
   {
     id: "medadvisor",
-    icon: "📱",
+    icon: "activity",
     title: "MedAdvisor App",
     desc: "Manage your prescriptions and medication reminders with the free MedAdvisor app, linked directly to our dispensing system.",
     details: [
@@ -106,7 +107,7 @@ const services = [
   },
   {
     id: "dva",
-    icon: "🎖️",
+    icon: "shield-plus",
     title: "DVA & Veteran Cards",
     desc: "We are a DVA-approved pharmacy and accept all veteran cards. Most PBS medications are free for eligible DVA card holders.",
     details: [
@@ -120,7 +121,7 @@ const services = [
   },
   {
     id: "delivery",
-    icon: "🚚",
+    icon: "truck",
     title: "Australia-wide Delivery",
     desc: "We deliver compounded medications and retail products Australia-wide, including to remote and rural areas.",
     details: [
@@ -164,7 +165,7 @@ export default function Services() {
               href={`#${s.id}`}
               className="px-4 py-2 rounded-full text-sm font-medium bg-white border border-border hover:border-[#2d6a4f] hover:text-[#1a4d2e] transition-all"
             >
-              {s.icon} {s.title}
+              <ConditionIcon name={s.icon} className="w-4 h-4" /> {s.title}
             </a>
           ))}
         </div>
@@ -181,7 +182,9 @@ export default function Services() {
             >
               <div className={idx % 2 === 1 ? "lg:order-2" : ""}>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">{s.icon}</span>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: "var(--brp-green-50)", color: "var(--brp-green-800)" }}>
+                    <ConditionIcon name={s.icon} className="w-6 h-6" />
+                  </div>
                   <h2
                     className="text-3xl font-bold text-[#1a4d2e]"
                     style={{ fontFamily: "var(--font-display)" }}
@@ -231,7 +234,7 @@ export default function Services() {
                   />
                 ) : (
                   <div className="rounded-2xl bg-muted border border-[#2d6a4f]/20 aspect-[4/3] flex items-center justify-center">
-                    <span className="text-8xl opacity-30">{s.icon}</span>
+                    <ConditionIcon name={s.icon} className="w-20 h-20 opacity-20" style={{ color: "var(--brp-green-800)" }} />
                   </div>
                 )}
               </div>

@@ -98,6 +98,101 @@ export const articles: Article[] = [
     publishedAt: "2026-02-20",
     author: "Burke Road Compounding Pharmacists",
   },
+  {
+    slug: "mens-health-compounding",
+    title: "Men's Health and Compounding: What Your Pharmacist Can Prepare",
+    excerpt:
+      "From testosterone replacement to erectile dysfunction support, compounding pharmacy can prepare formulations tailored to men's health needs when standard commercial products are unsuitable.",
+    category: "Men's Health",
+    readTimeMinutes: 5,
+    publishedAt: "2026-02-28",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "mens-health",
+  },
+  {
+    slug: "womens-health-compounding",
+    title: "Women's Health Across Every Life Stage: A Compounding Perspective",
+    excerpt:
+      "Compounding supports women's health from adolescence through menopause and beyond. Discover how personalised formulations can address hormonal imbalances, pelvic health, and more.",
+    category: "Women's Health",
+    readTimeMinutes: 6,
+    publishedAt: "2026-03-05",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "womens-health",
+  },
+  {
+    slug: "dose-administration-aids",
+    title: "Dose Administration Aids: How Webster-paks and SureMed Packs Help",
+    excerpt:
+      "Managing multiple medications can be complex and error-prone. Dose administration aids like Webster-paks and SureMed blister packs help patients and carers stay organised and safe.",
+    category: "Services",
+    readTimeMinutes: 4,
+    publishedAt: "2026-03-10",
+    author: "Burke Road Compounding Pharmacists",
+  },
+  {
+    slug: "flu-vaccination-guide",
+    title: "Annual Flu Vaccination: Why Timing and Strain Matter",
+    excerpt:
+      "The influenza vaccine is updated each year to match circulating strains. Learn when to get vaccinated, who is most at risk, and how pharmacist-administered vaccines work in Australia.",
+    category: "Vaccinations",
+    readTimeMinutes: 4,
+    publishedAt: "2026-03-12",
+    author: "Burke Road Compounding Pharmacists",
+  },
+  {
+    slug: "sports-medicine-compounding",
+    title: "Sports Medicine and Compounding: Targeted Recovery Formulations",
+    excerpt:
+      "Athletes and active individuals often require formulations not available off the shelf. Compounded topical analgesics, anti-inflammatories, and recovery preparations can be tailored to specific needs.",
+    category: "Sports Medicine",
+    readTimeMinutes: 5,
+    publishedAt: "2026-03-14",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "sports-medicine",
+  },
+  {
+    slug: "dental-compounding",
+    title: "Dental Compounding: Custom Formulations for Oral Health",
+    excerpt:
+      "Dentists increasingly rely on compounding pharmacies to prepare anaesthetics, antimicrobials, and fluoride treatments in concentrations and forms not commercially available.",
+    category: "Dental",
+    readTimeMinutes: 4,
+    publishedAt: "2026-03-16",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "dental",
+  },
+  {
+    slug: "mental-health-compounding",
+    title: "Compounding and Mental Health: When Standard Doses Don't Fit",
+    excerpt:
+      "Some patients require doses or formulations of psychiatric medications that are not commercially available. Compounding can provide liquid formulations, alternative strengths, and allergen-free preparations.",
+    category: "Mental Health",
+    readTimeMinutes: 5,
+    publishedAt: "2026-03-18",
+    author: "Burke Road Compounding Pharmacists",
+    relatedConditionSlug: "mental-health",
+  },
+  {
+    slug: "dva-pharmacy-services",
+    title: "DVA Pharmacy Services: What Veterans Are Entitled To",
+    excerpt:
+      "Australian veterans holding DVA White, Gold, or Orange cards are entitled to a range of subsidised pharmacy services. This guide explains what is covered and how to access it.",
+    category: "PBS & Dispensing",
+    readTimeMinutes: 4,
+    publishedAt: "2026-03-20",
+    author: "Burke Road Compounding Pharmacists",
+  },
+  {
+    slug: "australia-wide-delivery",
+    title: "Compounded Medications Delivered Australia-wide: How It Works",
+    excerpt:
+      "Burke Road Pharmacy ships compounded preparations and retail products to all states and territories, including remote areas. Learn about our packaging, cold chain, and delivery process.",
+    category: "Services",
+    readTimeMinutes: 3,
+    publishedAt: "2026-03-22",
+    author: "Burke Road Compounding Pharmacists",
+  },
 ];
 
 export const articleCategories = [
@@ -109,6 +204,12 @@ export const articleCategories = [
   "Veterinary",
   "Dermatology",
   "Services",
+  "Men's Health",
+  "Women's Health",
+  "Vaccinations",
+  "Sports Medicine",
+  "Dental",
+  "Mental Health",
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {

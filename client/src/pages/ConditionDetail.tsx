@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight, AlertTriangle } from "lucide-react";
+import ConditionIcon from "@/components/ConditionIcon";
 import SEO from "@/components/SEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import { BUSINESS } from "@/config/business";
@@ -17,7 +18,7 @@ interface ConditionData {
 
 const conditionData: Record<string, ConditionData> = {
   "hormone-therapy": {
-    icon: "⚖️",
+    icon: "activity",
     title: "Hormone Therapy Compounding",
     subtitle: "Personalised bioidentical hormone replacement therapy",
     metaDescription:
@@ -59,7 +60,7 @@ const conditionData: Record<string, ConditionData> = {
       "All compounded hormone medications require a prescription from a qualified healthcare provider. Hormone therapy should be individualised and monitored regularly. Discuss potential risks and benefits with your doctor.",
   },
   "pain-management": {
-    icon: "💊",
+    icon: "shield-plus",
     title: "Pain Management Compounding",
     subtitle: "Targeted topical and systemic pain relief solutions",
     metaDescription:
@@ -95,7 +96,7 @@ const conditionData: Record<string, ConditionData> = {
       "All compounded pain medications require a valid prescription. Please consult your doctor or specialist before requesting compounded preparations.",
   },
   "dermatology": {
-    icon: "🌿",
+    icon: "sparkles",
     title: "Dermatology Compounding",
     subtitle: "Custom skincare and dermatological preparations",
     metaDescription:
@@ -131,7 +132,7 @@ const conditionData: Record<string, ConditionData> = {
     ],
   },
   "paediatrics": {
-    icon: "👶",
+    icon: "baby",
     title: "Paediatric Compounding",
     subtitle: "Child-friendly medications in the right dose and form",
     metaDescription:
@@ -164,7 +165,7 @@ const conditionData: Record<string, ConditionData> = {
     ],
   },
   "veterinary": {
-    icon: "🐾",
+    icon: "paw-print",
     title: "Veterinary Compounding",
     subtitle: "Customised medications for your beloved animals",
     metaDescription:
@@ -199,7 +200,7 @@ const conditionData: Record<string, ConditionData> = {
       "All veterinary compounded medications require a prescription from a registered veterinarian.",
   },
   "low-dose-naltrexone": {
-    icon: "🧬",
+    icon: "dna",
     title: "Low Dose Naltrexone (LDN)",
     subtitle: "Emerging therapy for autoimmune and chronic conditions",
     metaDescription:
@@ -234,7 +235,7 @@ const conditionData: Record<string, ConditionData> = {
       "LDN is an off-label use of naltrexone and requires a prescription. Please discuss with your doctor whether LDN is appropriate for your condition.",
   },
   "mens-health": {
-    icon: "♂️",
+    icon: "user",
     title: "Men's Health Compounding",
     subtitle: "Testosterone therapy, vitality, and beyond",
     metaDescription:
@@ -270,7 +271,7 @@ const conditionData: Record<string, ConditionData> = {
       "All men's health compounded medications require a prescription from a qualified healthcare provider.",
   },
   "womens-health": {
-    icon: "♀️",
+    icon: "heart-pulse",
     title: "Women's Health Compounding",
     subtitle: "Personalised care for every stage of life",
     metaDescription:
@@ -306,7 +307,7 @@ const conditionData: Record<string, ConditionData> = {
       "All compounded women's health medications require a prescription from a qualified healthcare provider. Hormone therapy should be individualised and monitored regularly.",
   },
   "sports-medicine": {
-    icon: "🏃",
+    icon: "zap",
     title: "Sports Medicine Compounding",
     subtitle: "Performance, recovery, and injury management",
     metaDescription:
@@ -330,7 +331,7 @@ const conditionData: Record<string, ConditionData> = {
       "All compounded medications require a valid prescription. Athletes should ensure all preparations comply with ASADA/WADA anti-doping regulations.",
   },
   "dental": {
-    icon: "🦷",
+    icon: "smile",
     title: "Dental Compounding",
     subtitle: "Specialised oral and dental preparations",
     metaDescription:
@@ -355,7 +356,7 @@ const conditionData: Record<string, ConditionData> = {
       "All dental compounded medications require a prescription from a registered dental practitioner.",
   },
   "gastroenterology": {
-    icon: "🫁",
+    icon: "stethoscope",
     title: "Gastroenterology Compounding",
     subtitle: "Digestive health and gastrointestinal support",
     metaDescription:
@@ -388,7 +389,7 @@ const conditionData: Record<string, ConditionData> = {
     ],
   },
   "mental-health": {
-    icon: "🧠",
+    icon: "brain",
     title: "Mental Health Compounding",
     subtitle: "Personalised support for mental wellbeing",
     metaDescription:
@@ -467,7 +468,9 @@ export default function ConditionDetail({ params }: Props) {
             ]}
           />
           <div className="flex items-center gap-5 mt-4">
-            <span className="text-5xl">{data.icon}</span>
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0" style={{ backgroundColor: "rgba(255,255,255,0.15)" }}>
+              <ConditionIcon name={data.icon} className="w-8 h-8 text-white" />
+            </div>
             <div>
               <h1
                 className="text-4xl md:text-5xl font-bold text-white"

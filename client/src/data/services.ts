@@ -2,6 +2,7 @@ export interface Service {
   slug: string;
   title: string;
   description: string;
+  /** Icon key — maps to a Lucide icon in ConditionIcon component */
   icon: string;
   href: string;
 }
@@ -12,7 +13,7 @@ export const services: Service[] = [
     title: "PBS Dispensing",
     description:
       "Subsidised prescriptions under the Pharmaceutical Benefits Scheme. We accept all Medicare, DVA, and concession cards.",
-    icon: "💊",
+    icon: "pill",
     href: "/services#pbs",
   },
   {
@@ -20,7 +21,7 @@ export const services: Service[] = [
     title: "Vaccinations",
     description:
       "Flu, COVID-19, travel vaccines and more. No appointment needed for most vaccines.",
-    icon: "💉",
+    icon: "syringe",
     href: "/services#vaccinations",
   },
   {
@@ -28,7 +29,7 @@ export const services: Service[] = [
     title: "Compounding",
     description:
       "Personalised medications tailored to your unique needs. Hormone therapy, pain management, dermatology, and more.",
-    icon: "🧪",
+    icon: "flask",
     href: "/compounding",
   },
   {
@@ -36,7 +37,7 @@ export const services: Service[] = [
     title: "Chemist Care Now",
     description:
       "Minor ailment consultations without a GP appointment. Get treatment for common conditions on the spot.",
-    icon: "🩺",
+    icon: "stethoscope",
     href: "/services#chemist-care-now",
   },
   {
@@ -44,7 +45,7 @@ export const services: Service[] = [
     title: "Australia-wide Delivery",
     description:
       "We deliver compounded medications and retail products Australia-wide, including remote areas.",
-    icon: "🚚",
+    icon: "truck",
     href: "/services",
   },
   {
@@ -52,7 +53,7 @@ export const services: Service[] = [
     title: "Dose Administration Aids",
     description:
       "SureMed blister packs and Webster-paks to help you manage complex medication regimens safely.",
-    icon: "📦",
+    icon: "clipboard",
     href: "/services#daa",
   },
   {
@@ -60,7 +61,7 @@ export const services: Service[] = [
     title: "MedAdvisor",
     description:
       "Digital medication management app. Track your prescriptions, set reminders, and request repeats online.",
-    icon: "📱",
+    icon: "activity",
     href: "/services#medadvisor",
   },
   {
@@ -68,7 +69,7 @@ export const services: Service[] = [
     title: "DVA Services",
     description:
       "Full DVA White, Gold, and Orange card services. Most items dispensed at no cost to eligible veterans.",
-    icon: "🎖️",
+    icon: "shield-plus",
     href: "/services#dva",
   },
 ];

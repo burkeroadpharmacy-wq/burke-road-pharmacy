@@ -1,6 +1,7 @@
 import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
 import { conditions } from "@/data/conditions";
+import ConditionIcon from "@/components/ConditionIcon";
 
 export default function Conditions() {
   const displayConditions = conditions;
@@ -46,16 +47,21 @@ export default function Conditions() {
             <Link
               key={c.slug}
               href={`/conditions/${c.slug}`}
-              className="brp-card p-6 text-center group flex flex-col items-center"
+              className="brp-card p-6 text-center group flex flex-col items-center transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="text-5xl mb-4">{c.icon}</div>
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-colors group-hover:bg-[#1a4d2e] group-hover:text-white"
+                style={{ backgroundColor: "var(--brp-green-50)", color: "var(--brp-green-800)" }}
+              >
+                <ConditionIcon name={c.icon} className="w-7 h-7" />
+              </div>
               <h3
-                className="text-xl font-bold text-[#1a4d2e] mb-2 group-hover:text-[#1a4d2e]-700"
-                style={{ fontFamily: "var(--font-display)" }}
+                className="text-lg font-bold mb-2"
+                style={{ fontFamily: "var(--font-display)", color: "var(--brp-green-800)" }}
               >
                 {c.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{c.summary}</p>
+              <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{c.summary}</p>
             </Link>
           ))}
         </div>

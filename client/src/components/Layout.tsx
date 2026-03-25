@@ -12,6 +12,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, Phone, MapPin, Clock, Mail, Upload } from "lucide-react";
 import { BUSINESS, whatsappHref } from "@/config/business";
+import { articles } from "@/data/articles";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5";
 
@@ -389,9 +390,9 @@ export default function Layout({ children }: LayoutProps) {
       {/* Footer */}
       <footer className="bg-[#1a3a2e] text-white pb-20 md:pb-0">
         <div className="container py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Brand */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src={`${CDN}/logo-final-square_18df8581.png`}
@@ -470,6 +471,26 @@ export default function Layout({ children }: LayoutProps) {
                     <Link href={s.href} className="hover:text-white transition-colors">
                       {s.label}
                     </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Recent Articles */}
+            <div>
+              <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
+                Recent Articles
+              </h3>
+              <ul className="space-y-3">
+                {articles.slice(-5).reverse().map((a) => (
+                  <li key={a.slug}>
+                    <Link
+                      href={`/knowledge-centre/${a.slug}`}
+                      className="text-white/70 hover:text-white text-sm transition-colors leading-snug block"
+                    >
+                      {a.title}
+                    </Link>
+                    <span className="text-white/40 text-xs">{a.category}</span>
                   </li>
                 ))}
               </ul>

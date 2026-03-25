@@ -1,40 +1,41 @@
 import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
+import ConditionIcon from "@/components/ConditionIcon";
 
 const resources = [
   {
-    icon: "📋",
+    icon: "clipboard",
     title: "Online Formulary",
     desc: "Browse our comprehensive formulary with detailed pricing, dosage forms, and therapeutic categories. Updated regularly with new formulations.",
     href: "/prescribers",
   },
   {
-    icon: "📝",
+    icon: "clipboard",
     title: "Prescription Generator",
     desc: "Generate professional compounding prescriptions online. Pre-filled templates for common formulations with customisable fields.",
     href: "/prescribers",
   },
   {
-    icon: "🧮",
+    icon: "activity",
     title: "Compounding Calculators",
     desc: "Professional pharmaceutical calculators including MAWQ, alligation, potency adjustment, and displacement factors.",
     href: "/prescribers",
   },
   {
-    icon: "📞",
+    icon: "phone",
     title: "Clinical Consultation",
     desc: "Speak directly with our compounding pharmacists for formulation advice, dosing guidance, and therapeutic recommendations.",
     href: `tel:${BUSINESS.phone.landlineE164}`,
   },
   {
-    icon: "📚",
+    icon: "brain",
     title: "Knowledge Centre",
     desc: "Evidence-based articles written by our compounding pharmacists to support your clinical practice.",
     href: "/knowledge-centre",
   },
   {
-    icon: "🔬",
+    icon: "flask",
     title: "Prescribers Portal",
     desc: "Access the prescribers-only portal for prescription generation, formulary access, and direct communication.",
     href: "/prescribers",
@@ -115,7 +116,9 @@ export default function Practitioners() {
               href={r.href}
               className="brp-card p-6 group flex flex-col gap-4"
             >
-              <div className="text-4xl">{r.icon}</div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-colors group-hover:bg-[#1a4d2e] group-hover:text-white" style={{ backgroundColor: "var(--brp-green-50)", color: "var(--brp-green-800)" }}>
+                <ConditionIcon name={r.icon} className="w-6 h-6" />
+              </div>
               <div>
                 <h3
                   className="text-xl font-bold text-[#1a4d2e] mb-2 group-hover:text-[#1a4d2e]-700"
