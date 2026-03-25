@@ -10,7 +10,7 @@
  */
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ChevronDown, Phone, MapPin, Clock, Mail, Upload } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, MapPin, Clock, Mail, Upload, CalendarCheck } from "lucide-react";
 import { BUSINESS, whatsappHref } from "@/config/business";
 import { articles } from "@/data/articles";
 
@@ -292,6 +292,15 @@ export default function Layout({ children }: LayoutProps) {
               >
                 Prescribers
               </Link>
+              <a
+                href={BUSINESS.urls.booking}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-4 py-2 bg-white/15 hover:bg-white/25 text-white text-sm font-semibold rounded-lg border border-white/30 transition-all"
+              >
+                <CalendarCheck className="w-4 h-4" />
+                Book Online
+              </a>
               <Link
                 href="/upload-prescription"
                 className="flex items-center gap-1.5 px-4 py-2 bg-[#c9a96e] hover:bg-[#b8955a] text-[#1a3a2e] text-sm font-bold rounded-lg transition-all"

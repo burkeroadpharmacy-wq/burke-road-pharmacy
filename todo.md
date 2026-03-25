@@ -199,3 +199,4 @@
 - [x] Add Recent Articles column to footer
 - [ ] Improve testimonials section (gold stars, carousel)
 - [x] Add Book Online button to hero section linking to MedAdvisor
+- [x] Add Book Online button to sticky header next to phone number
