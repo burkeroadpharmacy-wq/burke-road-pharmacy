@@ -100,8 +100,8 @@ export default function TravelHealth() {
           <div className="grid lg:grid-cols-3 gap-6 mb-10">
             {[
               { icon: <Globe className="w-6 h-6" />, title: "Destination advice", desc: "Personalised recommendations based on your specific itinerary, activities, and health history." },
-              { icon: <FileText className="w-6 h-6" />, title: "Documentation", desc: "Yellow fever vaccination certificates and International Certificate of Vaccination issued on the spot." },
-              { icon: <Syringe className="w-6 h-6" />, title: "No appointment needed", desc: "Walk in for most routine travel vaccines. Call ahead for yellow fever and Japanese encephalitis." },
+              { icon: <FileText className="w-6 h-6" />, title: "Documentation", desc: "Yellow fever vaccination certificates and International Certificate of Vaccination issued at the time of vaccination." },
+              { icon: <Syringe className="w-6 h-6" />, title: "Bookings recommended", desc: "Please call ahead or book online to confirm availability. Bookings are required for yellow fever and Japanese encephalitis vaccines." },
             ].map((item) => (
               <div key={item.title} className="brp-card p-6">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: "var(--brp-green-50)", color: "var(--brp-green-800)" }}>

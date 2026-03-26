@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useState } from "react";
 import { BUSINESS } from "@/config/business";
@@ -109,7 +110,13 @@ export default function Prescribers() {
   };
 
   return (
-    <div className="bg-background">
+    <>
+      <SEO
+        title="For Prescribers"
+        description="Information for GPs, specialists and prescribers referring to Burke Road Compounding Pharmacy. Fax prescriptions to 03 9882 8214 or call 03 9882 5386."
+        canonical="/prescribers"
+      />
+      <div className="bg-background">
       {/* Header */}
       <div className="brp-gradient py-12 text-white">
         <div className="container">
@@ -447,5 +454,6 @@ export default function Prescribers() {
         </div>
       </div>
     </div>
+    </>
   );
 }

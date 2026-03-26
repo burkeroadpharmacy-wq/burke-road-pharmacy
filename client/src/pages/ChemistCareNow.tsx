@@ -23,8 +23,8 @@ export default function ChemistCareNow() {
   return (
     <>
       <SEO
-        title="Chemist Care Now — Minor Ailment Consultations"
-        description="Get treatment for common conditions without a GP appointment. Burke Road Pharmacy's Chemist Care Now service in Camberwell."
+        title="Pharmacist Prescribing Service — Chemist Care Now | Burke Road Pharmacy"
+        description="Our pharmacists can assess and manage eligible minor conditions under the Victorian Pharmacist Prescribing initiative. A consultation is required. Not all conditions are eligible."
         canonical="/services/chemist-care-now"
       />
 
@@ -39,8 +39,7 @@ export default function ChemistCareNow() {
               Chemist Care Now
             </h1>
             <p className="text-white/80 text-lg">
-              Get treatment for common conditions on the spot — no GP appointment, no
-              waiting room, no referral needed.
+              Our pharmacists can assess and manage eligible minor conditions under the Victorian Pharmacist Prescribing initiative. A consultation is required. Not all conditions are eligible. Some presentations will require referral to a GP.
             </p>
           </div>
         </div>
@@ -82,10 +81,10 @@ export default function ChemistCareNow() {
                 </div>
                 <ol className="space-y-3">
                   {[
-                    "Walk in during trading hours — no appointment needed",
-                    "Speak privately with one of our pharmacists",
-                    "We assess your symptoms and recommend treatment",
-                    "Receive your medication on the spot if appropriate",
+                    "Visit us during trading hours — a brief consultation is required",
+                    "Speak privately with one of our pharmacists in a consultation area",
+                    "Your pharmacist will assess eligibility and discuss your options",
+                    "If eligible, a prescription may be issued and dispensed at the pharmacy",
                   ].map((step, i) => (
                     <li key={i} className="flex gap-3 text-sm" style={{ color: "#374151" }}>
                       <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0" style={{ backgroundColor: "var(--brp-green-800)" }}>

@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
@@ -27,7 +28,7 @@ const services = [
     id: "vaccinations",
     icon: "syringe",
     title: "Vaccinations",
-    desc: "Our trained pharmacists administer a range of vaccines. No appointment needed for most vaccines — walk in during trading hours.",
+    desc: "Our trained pharmacists administer a range of vaccines during trading hours. Bookings are recommended for some vaccines.",
     details: [
       "Influenza (flu) vaccine — seasonal",
       "COVID-19 vaccines",
@@ -47,7 +48,7 @@ const services = [
     title: "Compounding",
     desc: "Our QCPP-accredited compounding laboratory creates personalised medications tailored to your exact needs.",
     details: [
-      "Bioidentical hormone therapy (BHRT)",
+      "Hormone preparations (compounded to prescription)",
       "Topical pain and anti-inflammatory preparations",
       "Paediatric formulations in child-friendly flavours",
       "Veterinary medications",
@@ -62,7 +63,7 @@ const services = [
     id: "chemist-care-now",
     icon: "stethoscope",
     title: "Chemist Care Now",
-    desc: "Minor ailment consultations without a GP appointment. Our pharmacists can assess and treat a range of common conditions on the spot.",
+    desc: "Our pharmacists can assess and manage eligible minor conditions under the Victorian Pharmacist Prescribing initiative. A consultation is required. Not all conditions are eligible.",
     details: [
       "Urinary tract infections (UTI)",
       "Skin conditions (rashes, eczema, tinea)",
@@ -85,7 +86,7 @@ const services = [
       "Weekly blister pack preparation",
       "SureMed and Webster-pak formats",
       "Suitable for patients on multiple medications",
-      "Helps prevent missed or double doses",
+      "Supports medication adherence for complex regimens",
       "Available for residential care facilities",
       "Home delivery available",
     ],
@@ -138,7 +139,13 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="bg-background">
+    <>
+      <SEO
+        title="Our Services"
+        description="Burke Road Compounding Pharmacy services: PBS dispensing, compounding, vaccinations, Chemist Care Now, dose administration aids, and Australia-wide delivery. Camberwell, Melbourne."
+        canonical="/services"
+      />
+      <div className="bg-background">
       {/* Header */}
       <div className="brp-gradient py-16 text-white">
         <div className="container">
@@ -269,5 +276,6 @@ export default function Services() {
         </div>
       </div>
     </div>
+    </>
   );
 }

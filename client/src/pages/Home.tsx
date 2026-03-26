@@ -20,11 +20,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/93092134/Sz8SP7v55RRQvADhiwfHx5";
 
 const compoundingHighlights = [
-  "Bioidentical Hormone Replacement Therapy (BHRT)",
+  "Compounded hormone preparations (as prescribed by your doctor)",
   "Topical pain and anti-inflammatory preparations",
   "Paediatric formulations in child-friendly flavours",
   "Veterinary medications for all animal sizes",
-  "Low Dose Naltrexone (LDN) capsules",
+  "Low Dose Naltrexone (LDN) capsules (prescription required)",
   "Dermatology and skincare preparations",
 ];
 
@@ -142,7 +142,7 @@ export default function Home() {
 
         {/* ── 2. Announcement bar ──────────────────────────── */}
         <div className="py-3 text-center text-sm font-medium" style={{ backgroundColor: "var(--brp-brass-500)", color: "var(--brp-green-900)" }}>
-          📋 New PBS co-payment rates from 1 January 2026 — General $31.60 · Concession $7.70 &nbsp;
+          New PBS co-payment rates from 1 January 2026 — General $31.60 · Concession $7.70 &nbsp;
           <Link href="/services#pbs" className="underline font-bold">Learn more →</Link>
         </div>
 
@@ -165,10 +165,10 @@ export default function Home() {
                   className="brp-card p-6 group flex flex-col gap-4 h-full"
                 >
                   <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center transition-colors"
+                    className="w-14 h-14 rounded-xl flex items-center justify-center transition-colors group-hover:bg-[var(--brp-green-800)] group-hover:text-white"
                     style={{ backgroundColor: "var(--brp-green-50)", color: "var(--brp-green-800)" }}
                   >
-                    <Pill className="w-7 h-7" />
+                    <ConditionIcon name={s.icon} className="w-7 h-7" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--brp-text)" }}>

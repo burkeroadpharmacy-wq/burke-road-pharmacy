@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
 import { conditions } from "@/data/conditions";
@@ -8,7 +9,13 @@ export default function Conditions() {
   const displayConditions = conditions;
 
   return (
-    <div className="bg-background">
+    <>
+      <SEO
+        title="Browse by Condition"
+        description="Browse compounding solutions by health condition at Burke Road Pharmacy, Camberwell. Hormone therapy, pain management, dermatology, paediatrics, veterinary and more."
+        canonical="/conditions"
+      />
+      <div className="bg-background">
       <div className="brp-gradient py-16 text-white">
         <div className="container">
           <Breadcrumb items={[{ label: "Conditions", href: "/conditions" }]} className="mb-4" />
@@ -88,11 +95,12 @@ export default function Conditions() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-xl border border-white/40 transition-all"
             >
-              💬 WhatsApp Us
+              WhatsApp Us
             </a>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 }

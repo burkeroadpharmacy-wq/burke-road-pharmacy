@@ -217,7 +217,7 @@
 
 ### Medium Priority
 - [x] Add Article JSON-LD schema to ArticleDetail page
-- [ ] Add MedicalCondition JSON-LD schema to ConditionDetail page
+- [x] Add MedicalCondition JSON-LD schema to ConditionDetail page
 - [ ] Add counter animations to homepage trust stats
 - [ ] Build testimonials carousel/slider on homepage
 - [ ] Add favicon.ico, manifest.json, Apple icons to public/
@@ -226,3 +226,20 @@
 ### Lower Priority
 - [ ] Clean up unused routes (/compounding-pharmacy-camberwell, /order-repeat-script, /ask-a-pharmacist)
 - [ ] Verify all internal anchor links (Services section IDs)
+
+## Phase 14: Comprehensive Audit and Upgrade
+- [ ] TGA compliance: rewrite risky copy sitewide (BHRT, treatment on the spot, cures, prevents, guaranteed, superior)
+- [x] Add site-wide educational disclaimer to footer
+- [ ] Fix Chemist Care Now copy to restrained pharmacist prescribing wording
+- [ ] Add staging noindex / production index logic
+- [ ] Visual system upgrade: spacing, typography, cards, shadows in index.css
+- [ ] Homepage hero refinement: premium composition, trust strip, CTA hierarchy
+- [ ] Iframe wrapper polish: make prescription upload feel native
+- [ ] About page: improve E-E-A-T, community history, accreditations
+- [ ] Compounding page: more compliant, clearer prescription requirement
+- [ ] Services page: cleaner, more cohesive, less repetitive
+- [ ] Prescribers page: polished, credible, professional
+- [ ] Contact page: upgrade trust and usability
+- [ ] SEO: metadata on all pages, BreadcrumbList schema, robots.txt, sitemap
+- [ ] Mobile: audit and fix responsiveness, upgrade mobile action bar
+- [ ] Final QA: scan hardcoded details, risky terms, broken links

@@ -27,7 +27,7 @@ export default function Vaccinations() {
     <>
       <SEO
         title="Vaccinations & Immunisations"
-        description="Flu shots, COVID boosters, travel vaccines, and routine immunisations at Burke Road Compounding Pharmacy, Camberwell. No appointment needed for most vaccines."
+        description="Flu shots, COVID boosters, travel vaccines, and routine immunisations at Burke Road Compounding Pharmacy, Camberwell. Bookings are recommended — call 03 9882 5386 or book online."
         canonical="/services/vaccinations"
       />
 
@@ -43,7 +43,7 @@ export default function Vaccinations() {
             </h1>
             <p className="text-white/80 text-lg">
               Protect yourself and your family with vaccinations administered by our
-              trained pharmacists. No appointment needed for most vaccines.
+              trained pharmacists. Bookings are recommended for some vaccines — please call ahead or book online.
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Vaccinations() {
         <div className="container">
           <div className="grid lg:grid-cols-3 gap-6 mb-14">
             {[
-              { icon: <Syringe className="w-6 h-6" />, title: "Walk-in available", desc: "No appointment needed for flu shots, COVID boosters, and most routine vaccines." },
+              { icon: <Syringe className="w-6 h-6" />, title: "Bookings recommended", desc: "Bookings are recommended for most vaccines. Please call ahead or book online to confirm availability." },
               { icon: <ShieldCheck className="w-6 h-6" />, title: "Trained pharmacists", desc: "All vaccinations are administered by accredited immunisation pharmacists." },
               { icon: <Clock className="w-6 h-6" />, title: "Quick & convenient", desc: "In and out in under 15 minutes for most vaccines. We record your vaccination in the AIR." },
             ].map((item) => (

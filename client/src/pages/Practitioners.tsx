@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import { BUSINESS } from "@/config/business";
 import { Link } from "wouter";
@@ -68,7 +69,13 @@ const articles = [
 
 export default function Practitioners() {
   return (
-    <div className="bg-background">
+    <>
+      <SEO
+        title="Our Practitioners"
+        description="Meet the experienced pharmacists and practitioners at Burke Road Compounding Pharmacy in Camberwell, Melbourne. QCPP-accredited compounding expertise."
+        canonical="/practitioners"
+      />
+      <div className="bg-background">
       {/* Header */}
       <div className="brp-gradient py-16 text-white">
         <div className="container">
@@ -203,5 +210,6 @@ export default function Practitioners() {
         </div>
       </div>
     </div>
+    </>
   );
 }

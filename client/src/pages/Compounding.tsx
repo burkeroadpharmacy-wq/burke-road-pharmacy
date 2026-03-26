@@ -58,7 +58,7 @@ export default function Compounding() {
     <>
       <SEO
         title="Compounding Pharmacy"
-        description="QCPP-accredited compounding pharmacy in Camberwell, Melbourne. Personalised medications including BHRT, pain management, paediatric formulations, veterinary and more."
+        description="QCPP-accredited compounding pharmacy in Camberwell, Melbourne. Personalised compounded medications for hormone therapy, pain management, paediatric formulations, veterinary and more. Prescription required."
         canonical="/compounding"
         jsonLd={breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Compounding", url: "/compounding" }])}
       />
@@ -111,7 +111,7 @@ export default function Compounding() {
                 }}
               >
                 <p className="text-sm font-medium" style={{ color: "var(--brp-green-800)", fontFamily: "var(--font-body)" }}>
-                  ⚠️ All compounded medications require a valid prescription from a registered
+                  All compounded medications require a valid prescription from a registered
                   Australian healthcare provider. Please consult your doctor before requesting
                   compounded preparations.
                 </p>

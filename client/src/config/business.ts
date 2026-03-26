@@ -76,8 +76,8 @@ export const BUSINESS = {
     keywords: [
       'compounding pharmacy Camberwell',
       'compounding pharmacy Melbourne',
-      'BHRT Melbourne',
-      'bioidentical hormone therapy Melbourne',
+      'hormone compounding Melbourne',
+      'compounded hormone preparations Melbourne',
       'LDN compounding Melbourne',
       'low dose naltrexone Melbourne',
       'PBS pharmacy Camberwell',

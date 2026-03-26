@@ -14,9 +14,9 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: "understanding-bhrt",
-    title: "Understanding Bioidentical Hormone Replacement Therapy",
+    title: "Compounded Hormone Preparations: What Patients Should Know",
     excerpt:
-      "BHRT uses hormones chemically identical to those your body produces. Learn how personalised compounding can optimise your hormone balance and improve quality of life.",
+      "Compounded hormone preparations are prepared to your prescriber's exact specifications. This article explains what compounding pharmacies can prepare and what to discuss with your doctor.",
     category: "Hormone Therapy",
     readTimeMinutes: 6,
     publishedAt: "2025-09-01",
@@ -25,9 +25,9 @@ export const articles: Article[] = [
   },
   {
     slug: "low-dose-naltrexone-guide",
-    title: "Low Dose Naltrexone: A Guide for Patients",
+    title: "Low Dose Naltrexone: A Patient Information Overview",
     excerpt:
-      "LDN is emerging as a promising therapy for autoimmune conditions, fibromyalgia, and chronic pain. Understand how it works, who it helps, and how to discuss it with your doctor.",
+      "Low dose naltrexone (LDN) is prescribed off-label by medical practitioners for a range of conditions. This overview explains what LDN is, how it is compounded, and what questions to ask your prescriber.",
     category: "Pain Management",
     readTimeMinutes: 7,
     publishedAt: "2025-10-15",

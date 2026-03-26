@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useState } from "react";
 import { Link } from "wouter";
@@ -55,7 +56,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-background">
+    <>
+      <SEO
+        title="Contact Us"
+        description="Contact Burke Road Compounding Pharmacy in Camberwell. Phone 03 9882 5386, fax 03 9882 8214, email info@burkeroadpharmacy.com.au. Open Mon-Fri 9am-6pm, Sat 9am-1pm."
+        canonical="/contact"
+      />
+      <div className="bg-background">
       {/* Header */}
       <div className="brp-gradient py-16 text-white">
         <div className="container">
@@ -312,5 +319,6 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    </>
   );
 }

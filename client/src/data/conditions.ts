@@ -13,11 +13,11 @@ export const conditions: Condition[] = [
     slug: "hormone-therapy",
     title: "Hormone Therapy",
     summary:
-      "Bioidentical hormone replacement therapy (BHRT) tailored to your individual hormone profile. We compound oestrogen, progesterone, testosterone, DHEA and thyroid preparations in a range of delivery forms.",
+      "Compounded hormone preparations tailored to your prescriber's specifications. We prepare oestrogen, progesterone, testosterone, DHEA and thyroid formulations in a range of delivery forms, as directed by your doctor.",
     icon: "activity",
     category: "Endocrinology",
     content:
-      "Bioidentical hormone replacement therapy uses hormones that are chemically identical to those produced naturally by the human body. Unlike conventional HRT, BHRT formulations can be precisely dosed to match your individual hormone levels as measured by saliva or blood testing. Burke Road Compounding Pharmacy works closely with integrative GPs and gynaecologists to prepare personalised BHRT creams, troches, capsules and pessaries.",
+      "Compounded hormone preparations are prepared to your prescriber's exact specifications. Burke Road Compounding Pharmacy works closely with GPs and gynaecologists to prepare personalised hormone creams, troches, capsules and pessaries. A valid prescription from a registered medical practitioner is required for all hormone preparations.",
   },
   {
     slug: "pain-management",
@@ -63,11 +63,11 @@ export const conditions: Condition[] = [
     slug: "low-dose-naltrexone",
     title: "Low Dose Naltrexone",
     summary:
-      "LDN capsules (1.5–4.5 mg) for autoimmune conditions, fibromyalgia, Crohn's disease, MS, and chronic fatigue. Compounded to your prescriber's exact dose.",
+      "Compounded low-dose naltrexone (LDN) capsules prepared to your prescriber's exact specifications. As LDN is not commercially available at these doses, it must be compounded. A valid prescription is required.",
     icon: "dna",
     category: "Immunology",
     content:
-      "Low dose naltrexone (LDN) is used off-label at doses of 1.5–4.5 mg (compared to the standard 50 mg addiction dose) to modulate the immune system. Research supports its use in multiple sclerosis, Crohn's disease, fibromyalgia, and other autoimmune conditions. As it is not commercially available at these doses, it must be compounded.",
+      "Low dose naltrexone (LDN) is compounded at doses not commercially available. It is prescribed off-label by registered medical practitioners for a range of conditions. A valid prescription is required. Please consult your doctor to determine whether LDN is appropriate for you.",
   },
   {
     slug: "mens-health",

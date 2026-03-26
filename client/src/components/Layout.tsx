@@ -53,9 +53,9 @@ const navItems = [
     children: [
       { label: "All Articles", href: "/knowledge-centre" },
       { label: "Understanding BHRT", href: "/knowledge-centre/understanding-bhrt" },
-      { label: "Low Dose Naltrexone", href: "/knowledge-centre/low-dose-naltrexone" },
-      { label: "What is Compounding?", href: "/knowledge-centre/what-is-compounding" },
-      { label: "PBS Guide", href: "/knowledge-centre/pbs-guide" },
+      { label: "Low Dose Naltrexone", href: "/knowledge-centre/low-dose-naltrexone-guide" },
+      { label: "Compounding for Children", href: "/knowledge-centre/compounding-for-children" },
+      { label: "PBS Pricing Guide 2026", href: "/knowledge-centre/pbs-pricing-guide-2026" },
     ],
   },
   { label: "About", href: "/about" },
@@ -386,6 +386,15 @@ export default function Layout({ children }: LayoutProps) {
                 >
                   Upload Prescription
                 </Link>
+                <a
+                  href={BUSINESS.urls.booking}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="block w-full text-center px-4 py-2.5 bg-[#84cc16] text-gray-900 text-sm font-bold rounded-lg"
+                >
+                  Book Online
+                </a>
               </div>
             </div>
           </div>
@@ -542,7 +551,14 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
-          <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/50">
+          {/* Educational Disclaimer */}
+          <div className="border-t border-white/10 mt-10 pt-8 pb-4">
+            <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+              <strong className="text-white/60">Disclaimer:</strong> The information on this website is intended for general educational purposes only and does not constitute medical advice. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your doctor, pharmacist, or other qualified health professional with any questions you may have regarding a medical condition or medication. Compounded medications are prepared to individual prescriptions and are not TGA-registered products. A valid prescription from a registered medical practitioner is required for all prescription medications.
+            </p>
+          </div>
+
+          <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/50">
             <p>
               © {new Date().getFullYear()} {BUSINESS.legalName}. All rights reserved.
             </p>

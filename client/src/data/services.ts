@@ -20,7 +20,7 @@ export const services: Service[] = [
     slug: "vaccinations",
     title: "Vaccinations",
     description:
-      "Flu, COVID-19, travel vaccines and more. No appointment needed for most vaccines.",
+      "Flu, COVID-19, travel vaccines and more. Bookings are recommended for some vaccines.",
     icon: "syringe",
     href: "/services#vaccinations",
   },
@@ -36,7 +36,7 @@ export const services: Service[] = [
     slug: "chemist-care-now",
     title: "Chemist Care Now",
     description:
-      "Minor ailment consultations without a GP appointment. Get treatment for common conditions on the spot.",
+      "Pharmacist prescribing for eligible minor conditions under the Victorian Pharmacist Prescribing initiative. A consultation is required.",
     icon: "stethoscope",
     href: "/services#chemist-care-now",
   },
